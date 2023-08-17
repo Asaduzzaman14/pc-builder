@@ -3,6 +3,11 @@ import { Button, Card, Image } from 'antd';
 import Link from 'next/link';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { BsDeviceSsd, BsFillMotherboardFill, BsMouseFill } from 'react-icons/bs'
+import { GiProcessor, GiStickFrame, GiWoodFrame } from 'react-icons/gi'
+import { FiMonitor } from 'react-icons/fi'
+import { MdOutlineStorage } from 'react-icons/md'
+import { FaFilePowerpoint } from 'react-icons/fa'
 
 const buildPc = () => {
 
@@ -12,58 +17,145 @@ const buildPc = () => {
     console.log(products);
     console.log(catagory);
 
-
-
     return (
         <div>
             <h2>BUILD YOUR PC</h2>
             <div className=''>
                 <div className='grid gap-5 mt-10'>
-                    <div className='border-2 rounded-sm '>
-                        <Link href="/build/processor" className='flex justify-between items-center px-2'>
-                            <p className=' p-4 rounded-md '>Processor  </p>
-                            <Button
-                                className='text-white'>Select</Button>
-                        </Link>
+                    <div className='border-2 rounded-lg '>
+                        <div className='flex justify-between items-center px-2'>
+                            <div className='flex justify-center items-center'>
+                                <span className='p-4'>
+                                    <GiProcessor className='text-5xl' />
+                                </span>
+
+                                <p className=' p-4 rounded-md '>Processor  </p>
+                            </div>
+
+                            {catagory?.find((element) => element == 'processor') ? (
+                                <Button className='text-white'>Selected</Button>
+                            ) : (
+                                <Link href="/build/processor">
+                                    <Button className='text-white'>Select</Button>
+                                </Link>
+                            )}
+                        </div>
                     </div>
-                    <div className='border-2 rounded-sm '>
-                        <Link href="/build/motherboard" className='flex justify-between items-center px-2'>
-                            <p className=' p-4 rounded-md '>Motherboard  </p>
-                            <Button className='text-white'>Select</Button>
-                        </Link>
+                    <div className='border-2 rounded-lg '>
+                        <div className='flex justify-between items-center px-2'>
+                            <div className='flex justify-center items-center'>
+                                <span className='p-4'>
+                                    <BsFillMotherboardFill className='text-5xl' />
+                                </span>
+                                <p className=' p-4 rounded-md '>Motherboard  </p>
+                            </div>
+
+                            {catagory?.find((element) => element == 'motherboard') ? (
+                                <Button className='text-white'>Selected</Button>
+                            ) : (
+                                <Link href="/build/motherboard">
+                                    <Button className='text-white'>Select</Button>
+                                </Link>
+                            )}
+
+                        </div>
                     </div>
-                    <div className='border-2 rounded-sm '>
-                        <Link href="/build/ram" className='flex justify-between items-center px-2'>
-                            <p className=' p-4 rounded-md '>RAM  </p>
-                            <Button className='text-white'>Select</Button>
-                        </Link>
+                    <div className='border-2 rounded-lg '>
+                        <div className='flex justify-between items-center px-2'>
+                            <div className='flex justify-center items-center'>
+                                <span className='p-4'>
+                                    <BsDeviceSsd className='text-5xl' />
+                                </span>
+                                <p className=' p-4 rounded-md '>RAM  </p>
+                            </div>
+
+                            {catagory?.find((element) => element == 'ram') ? (
+                                <Button className='text-white'>Selected</Button>
+                            ) : (
+                                <Link href="/build/ram">
+                                    <Button className='text-white'>Select</Button>
+                                </Link>
+                            )}
+
+                        </div>
                     </div>
-                    <div className='border-2 rounded-sm '>
-                        <Link href="/build/powerSupplyUnit" className='flex justify-between items-center px-2'>
-                            <p className=' p-4 rounded-md '>Power Supply Unit  </p>
-                            <Button className='text-white'>Select</Button>
-                        </Link>
+                    <div className='border-2 rounded-lg '>
+                        <div className='flex justify-between items-center px-2'>
+                            <div className='flex justify-center items-center'>
+                                <span className='p-4'>
+                                    <FaFilePowerpoint className='text-5xl' />
+                                </span>
+
+                                <p className=' p-4 rounded-md '>Power Supply Unit  </p>
+                            </div>
+
+                            {catagory?.find((element) => element == 'Power supply unit') ? (
+                                <Button className='text-white'>Selected</Button>
+                            ) : (
+                                <Link href="/build/powerSupplyUnit">
+                                    <Button className='text-white'>Select</Button>
+                                </Link>
+                            )}
+                        </div>
                     </div>
-                    <div className='border-2 rounded-sm '>
-                        <Link href="/build/storageDevice" className='flex justify-between items-center px-2'>
-                            <p className=' p-4 rounded-md '>Storage Device  </p>
-                            <Button className='text-white'>Select</Button>
-                        </Link>
+                    <div className='border-2 rounded-lg '>
+                        <div className='flex justify-between items-center px-2'>
+                            <div className='flex justify-center items-center'>
+                                <span className='p-4'>
+                                    <MdOutlineStorage className='text-5xl' />
+                                </span>
+                                <p className=' p-4 rounded-md '>Storage Device  </p>
+                            </div>
+
+                            {catagory?.find((element) => element == 'storage device') ? (
+                                <Button className='text-white'>Selected</Button>
+                            ) : (
+                                <Link href="/build/storageDevice">
+                                    <Button className='text-white'>Select</Button>
+                                </Link>
+                            )}
+
+
+
+                        </div>
                     </div>
-                    <div className='border-2 rounded-sm '>
-                        <Link href="/build/monitor" className='flex justify-between items-center px-2'>
-                            <p className=' p-4 rounded-md '>Monitor  </p>
-                            <Button className='text-white'>Select</Button>
-                        </Link>
+                    <div className='border-2 rounded-lg '>
+                        <div className='flex justify-between items-center px-2'>
+                            <div className='flex justify-center items-center'>
+                                <span className='p-4'>
+                                    <FiMonitor className='text-5xl text-white' />
+                                </span>
+                                <p className=' p-4 rounded-md '>Monitor  </p>
+                            </div>
+                            {catagory?.find((element) => element == 'monitor') ? (
+                                <Button className='text-white'>Selected</Button>
+                            ) : (
+                                <Link href="/build/storageDevice">
+                                    <Button className='text-white'>Select</Button>
+                                </Link>
+                            )}
+
+                        </div>
                     </div>
-                    <div className='border-2 rounded-sm '>
-                        <Link href="/build/mouse" className='flex justify-between items-center px-2'>
-                            <p className=' p-4 rounded-md '>Mouse  </p>
-                            <Button className='text-white'>Select</Button>
-                        </Link>
+                    <div className='border-2 rounded-lg '>
+                        <div className='flex justify-between items-center px-2'>
+                            <div className='flex justify-center items-center'>
+                                <span className='p-4'>
+                                    <BsMouseFill className='text-5xl' />
+                                </span>
+                                <p className=' p-4 rounded-md '>Mouse  </p>
+                            </div>
+
+                            {catagory?.find((element) => element == 'mouse') ? (
+                                <Button className='text-white'>Selected</Button>
+                            ) : (
+                                <Link href="/build/mouse">
+                                    <Button className='text-white'>Select</Button>
+                                </Link>
+                            )}
+                        </div>
                     </div>
                 </div>
-
 
                 <div className='my-5 text-center'>
                     <Button className='text-white'>BUILD</Button>

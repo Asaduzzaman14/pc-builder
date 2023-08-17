@@ -1,10 +1,12 @@
 import { addToCart } from '@/redux/features/build';
 import { Button, Card, Image } from 'antd';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
 const CatagoryProduct = ({ products }) => {
+    const router = useRouter();
 
     const dispatch = useDispatch()
 
@@ -16,7 +18,7 @@ const CatagoryProduct = ({ products }) => {
 
     const handleAddProduct = (product) => {
         dispatch(addToCart(product));
-
+        router.push('/build-pc');
     };
 
 
