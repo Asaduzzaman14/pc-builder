@@ -79,6 +79,8 @@ const buildPc = () => {
 
                         </div>
                     </div>
+
+                    
                     <div className='border-2 rounded-lg '>
                         <div className='flex justify-between items-center px-2'>
                             <div className='flex justify-center items-center'>
