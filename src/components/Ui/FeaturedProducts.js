@@ -23,10 +23,10 @@ const FeaturedProducts = ({ products }) => {
                 <p>Brand: {product?.Brand}</p>
                 <p>Price: {product?.Price}</p>
                 <p>Status: {product?.Status}</p>
-                <p>Rating: {product?.avgRatings}</p>
+                <p>Rating: {product?.AvgRatings}</p>
               </div>
               <div className='pt-3 text-center text-white'>
-                <Link href={`/product/${product.id}`}>
+                <Link href={`/product/${product?._id}`}>
                   <Button className='text-white'>DETAILS</Button>
                 </Link>
               </div>
