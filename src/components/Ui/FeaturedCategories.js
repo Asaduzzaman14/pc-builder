@@ -9,7 +9,7 @@ const FeaturedCategories = () => {
       <div className='grid grid-cols-4 gap-5 mt-10'>
         <div>
           <Link href='/Speaker'>
-            <h3 className='border-2 p-4 rounded-md text-center'>Speaker </h3>
+            <h3 className='border-2 p-4 rounded-md text-center'>Speaker</h3>
           </Link>
         </div>
         <div>

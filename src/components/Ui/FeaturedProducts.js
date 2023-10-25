@@ -19,11 +19,11 @@ const FeaturedProducts = ({ products }) => {
             >
               <Image alt='aa' width={300} height={500} src={product?.img1} />
               <div className='text-base font-medium text-gray-300'>
-                <p>Category: {product?.category}</p>
-                <p>Brand: {product?.brand}</p>
-                <p>Price: {product?.price}</p>
-                <p>Status: {product?.status}</p>
-                <p>Rating: this is Rating</p>
+                <p>Category: {product?.Category}</p>
+                <p>Brand: {product?.Brand}</p>
+                <p>Price: {product?.Price}</p>
+                <p>Status: {product?.Status}</p>
+                <p>Rating: {product?.avgRatings}</p>
               </div>
               <div className='pt-3 text-center text-white'>
                 <Link href={`/product/${product.id}`}>
