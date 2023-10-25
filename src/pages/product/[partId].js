@@ -69,7 +69,6 @@ export const getStaticPaths = async () => {
   const paths = parts?.data?.map((part) => ({
     params: { partId: part._id },
   }));
-  console.log(paths?.partsId);
   return { paths, fallback: false };
 };
 

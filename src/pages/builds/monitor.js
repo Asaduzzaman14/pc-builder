@@ -1,39 +1,35 @@
-import RootLayout from '@/components/Layoutes/RootLayout';
-import CatagoryProduct from '@/components/Ui/catagoryProduct';
-import React from 'react';
+import RootLayout from "@/components/Layoutes/RootLayout";
+import CatagoryProduct from "@/components/Ui/catagoryProduct";
+import React from "react";
 
 const Monitor = ({ products }) => {
+  const monitor = products?.filter((product) => product.catagory == "monitor");
 
-    const monitor = products?.filter(product => product.catagory == 'monitor');
-
-
-    return (
-        <div>
-            <h2>Monitor</h2>
-            <>
-                <CatagoryProduct products={monitor} />
-            </>
-        </div>
-    );
+  return (
+    <div>
+      <h2>Monitor</h2>
+      <>
+        <CatagoryProduct products={monitor} />
+      </>
+    </div>
+  );
 };
 
 export default Monitor;
 
-
 Monitor.getLayout = function getLayout(page) {
-    return <RootLayout>{page}</RootLayout>;
+  return <RootLayout>{page}</RootLayout>;
 };
 
-
-
 export const getServerSideProps = async () => {
+  const result = await fetch(
+    "https://pc-builder-gules-psi.vercel.app/api/v1/pc-parts"
+  );
+  const data = await result.json();
 
-    const result = await fetch('http://localhost:5000/featuredProduct')
-    const data = await result.json()
-
-    return {
-        props: {
-            products: data,
-        },
-    }
-}
+  return {
+    props: {
+      products: data,
+    },
+  };
+};

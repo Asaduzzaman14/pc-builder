@@ -156,14 +156,19 @@ const buildPc = () => {
         </div>
 
         <div className='my-5 text-center'>
-          <Button className='text-white'>BUILD</Button>
-          <div className='grid justify-items-center md:grid-cols-2  gap-5'>
+          <Button className='text-white my-4'>BUILD</Button>
+          <div className='grid justify-items-center md:grid-cols-2  gap-3'>
             {products?.map((product) => {
               return (
                 <Card
                   key={product.id}
                   className='p-0  bg-slate-900'
-                  style={{ width: 350, padding: "0px", margin: "0" }}
+                  style={{
+                    padding: "5px",
+                    width: 350,
+                    padding: "0px",
+                    margin: "0",
+                  }}
                 >
                   <div className='flex justify-between gap-5 items-center'>
                     <div className='flex gap-5'>
@@ -171,14 +176,13 @@ const buildPc = () => {
                         alt='aa'
                         width={100}
                         height={100}
-                        src={product?.img}
+                        src={product?.img1}
                       />
                       <div className='text-base font-medium text-gray-300'>
-                        <p>Name: {product?.name}</p>
-                        <p>Category: {product.catagory}</p>
-                        {/* <p>Price: {product?.price}</p>
-                                        <p>Status: this is In Stock</p>
-                                        <p>Rating: this is Rating</p> */}
+                        <p>Name: {product?.Category}</p>
+                        <p>Price: {product?.Price}</p>
+                        <p>Status: {product?.Status}</p>
+                        <p>Rating: {product?.AvgRatings}</p>
                       </div>
                     </div>
                   </div>
