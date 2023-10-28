@@ -12,7 +12,9 @@ const Speaker = ({ products }) => {
   return (
     <div>
       <h2>Speaker</h2>
-      <>{/* <CatagoryProduct products={ram} /> */}</>
+      <>
+        <CatagoryProduct products={speaker} />
+      </>
     </div>
   );
 };

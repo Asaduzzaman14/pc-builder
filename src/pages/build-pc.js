@@ -32,13 +32,13 @@ const buildPc = () => {
                   <GiProcessor className='text-5xl' />
                 </span>
 
-                <p className=' p-4 rounded-md '>Processor </p>
+                <p className=' p-4 rounded-md '>Speaker </p>
               </div>
 
               {catagory?.find((element) => element == "processor") ? (
                 <Button className='text-white'>Selected</Button>
               ) : (
-                <Link href='/build/processor'>
+                <Link href='/build/Speaker?query=Speaker'>
                   <Button className='text-white'>Select</Button>
                 </Link>
               )}
@@ -56,7 +56,7 @@ const buildPc = () => {
               {catagory?.find((element) => element == "motherboard") ? (
                 <Button className='text-white'>Selected</Button>
               ) : (
-                <Link href='/build/motherboard'>
+                <Link href='/build/motherboard?query=motherboard'>
                   <Button className='text-white'>Select</Button>
                 </Link>
               )}
@@ -74,7 +74,7 @@ const buildPc = () => {
               {catagory?.find((element) => element == "ram") ? (
                 <Button className='text-white'>Selected</Button>
               ) : (
-                <Link href='/build/ram'>
+                <Link href='/build/ram?query=Ram'>
                   <Button className='text-white'>Select</Button>
                 </Link>
               )}
@@ -88,13 +88,13 @@ const buildPc = () => {
                   <FaFilePowerpoint className='text-5xl' />
                 </span>
 
-                <p className=' p-4 rounded-md '>Power Supply Unit </p>
+                <p className=' p-4 rounded-md '>Keyboard</p>
               </div>
 
               {catagory?.find((element) => element == "Power supply unit") ? (
                 <Button className='text-white'>Selected</Button>
               ) : (
-                <Link href='/build/powerSupplyUnit'>
+                <Link href='/build/keyboard?query=Keyboard'>
                   <Button className='text-white'>Select</Button>
                 </Link>
               )}

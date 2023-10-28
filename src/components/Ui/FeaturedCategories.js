@@ -2,6 +2,23 @@ import Link from "next/link";
 import React from "react";
 
 const FeaturedCategories = () => {
+  /* 
+Casing
+Cpu Cooler
+CPU
+GPU
+Keyboard
+MotherBoard
+Mouse
+Monitor
+PSU
+RAM
+ROM
+SSD
+Speaker
+UPS
+*/
+
   return (
     <div className='pt-8'>
       <h2>Featured Categories</h2>
@@ -12,6 +29,69 @@ const FeaturedCategories = () => {
             <h3 className='border-2 p-4 rounded-md text-center'>Speaker</h3>
           </Link>
         </div>
+
+        <div>
+          <Link href='/Casing'>
+            <h3 className='border-2 p-4 rounded-md text-center'>Casing</h3>
+          </Link>
+        </div>
+
+        <div>
+          <Link href='/Cpu'>
+            <h3 className='border-2 p-4 rounded-md text-center'>CPU</h3>
+          </Link>
+        </div>
+
+        <div>
+          <Link href='/Gpu'>
+            <h3 className='border-2 p-4 rounded-md text-center'>GPU</h3>
+          </Link>
+        </div>
+
+        <div>
+          <Link href='/Keyboard'>
+            <h3 className='border-2 p-4 rounded-md text-center'>Keyboard</h3>
+          </Link>
+        </div>
+        <div>
+          <Link href='/Mouse'>
+            <h3 className='border-2 p-4 rounded-md text-center'>Mouse </h3>
+          </Link>
+        </div>
+        <div>
+          <Link href='/Psu'>
+            <h3 className='border-2 p-4 rounded-md text-center'>PSU </h3>
+          </Link>
+        </div>
+
+        <div>
+          <Link href='/Ram'>
+            <h3 className='border-2 p-4 rounded-md text-center'>RAM </h3>
+          </Link>
+        </div>
+        <div>
+          <Link href='/Rom'>
+            <h3 className='border-2 p-4 rounded-md text-center'>ROM</h3>
+          </Link>
+        </div>
+
+        <div>
+          <Link href='/Ssd'>
+            <h3 className='border-2 p-4 rounded-md text-center'>SSD</h3>
+          </Link>
+        </div>
+        <div>
+          <Link href='/Ups'>
+            <h3 className='border-2 p-4 rounded-md text-center'>UPS</h3>
+          </Link>
+        </div>
+
+        <div>
+          <Link href='/CpuCooler'>
+            <h3 className='border-2 p-4 rounded-md text-center'>Cpu Cooler</h3>
+          </Link>
+        </div>
+
         <div>
           <Link href='/processor'>
             <h3 className='border-2 p-4 rounded-md text-center'>Processor </h3>
@@ -24,33 +104,10 @@ const FeaturedCategories = () => {
             </h3>
           </Link>
         </div>
-        <div>
-          <Link href='/ram'>
-            <h3 className='border-2 p-4 rounded-md text-center'>RAM </h3>
-          </Link>
-        </div>
-        <div>
-          <Link href='/powerSupplyUnit'>
-            <h3 className='border-2 p-4 rounded-md text-center'>
-              Power Supply Unit{" "}
-            </h3>
-          </Link>
-        </div>
-        <div>
-          <Link href='/storageDevice'>
-            <h3 className='border-2 p-4 rounded-md text-center'>
-              Storage Device{" "}
-            </h3>
-          </Link>
-        </div>
+
         <div>
           <Link href='/monitor'>
             <h3 className='border-2 p-4 rounded-md text-center'>Monitor </h3>
-          </Link>
-        </div>
-        <div>
-          <Link href='/mouse'>
-            <h3 className='border-2 p-4 rounded-md text-center'>Mouse </h3>
           </Link>
         </div>
       </div>

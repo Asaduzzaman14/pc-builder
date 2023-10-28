@@ -25,7 +25,7 @@ const CatagoryProduct = ({ products }) => {
         <div className='grid justify-items-center md:grid-cols-2  gap-5'>
           {products?.map((product) => (
             <Card
-              key={product.id}
+              key={product?._id}
               className='p-0 border-0 hover:border bg-slate-900'
               style={{
                 width: 550,

@@ -5,12 +5,17 @@ import { useRouter } from "next/router";
 const Build = ({ products }) => {
   console.log(products);
   const router = useRouter();
+  const { query } = router?.query;
+  console.log(query);
+
+  const parts = products?.filter((product) => product?.Category === query);
+  console.log(parts);
 
   return (
     <div>
-      <h2>{router?.query?.build}</h2>
+      <h2>{query}</h2>
       <h2>Thsi is new page</h2>
-      <CatagoryProduct products={products} />
+      <CatagoryProduct products={parts} />
     </div>
   );
 };
@@ -26,7 +31,7 @@ export const getServerSideProps = async () => {
     "https://pc-builder-gules-psi.vercel.app/api/v1/pc-parts"
   );
   const data = await result?.json();
-  console.log(data);
+  // console.log(data);
   return {
     props: {
       products: data?.data,
