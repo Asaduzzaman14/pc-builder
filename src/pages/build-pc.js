@@ -17,15 +17,166 @@ const buildPc = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { products, catagory } = useSelector((state) => state.cart);
 
-  console.log(products);
-  console.log(catagory);
+  // console.log(products);
+  // console.log(catagory);
+
+  /* 
+ 
+ 
+ROM
+SSD
+ 
+UPS
+*/
 
   return (
     <div>
       <h2>BUILD YOUR PC</h2>
       <div className=''>
         <div className='grid gap-5 mt-10'>
+          {/* Casing */}
           <div className='border-2 rounded-lg '>
+            <div className='flex justify-between items-center px-2'>
+              <div className='flex justify-center items-center'>
+                <span className='p-4'>
+                  <GiProcessor className='text-5xl' />
+                </span>
+
+                <p className=' p-4 rounded-md '>Casing </p>
+              </div>
+
+              {catagory?.find((element) => element == "Casing") ? (
+                <Button className='text-white'>Selected</Button>
+              ) : (
+                <Link href='/build/casing?query=Casing'>
+                  <Button className='text-white'>Select</Button>
+                </Link>
+              )}
+            </div>
+          </div>
+          {/* Cpu Cooler */}
+          <div className='border-2 rounded-lg '>
+            <div className='flex justify-between items-center px-2'>
+              <div className='flex justify-center items-center'>
+                <span className='p-4'>
+                  <GiProcessor className='text-5xl' />
+                </span>
+
+                <p className=' p-4 rounded-md '>Cpu Cooler </p>
+              </div>
+
+              {catagory?.find((element) => element == "Cpu Cooler") ? (
+                <Button className='text-white'>Selected</Button>
+              ) : (
+                <Link href='/build/cpu-cooler?query=Cpu-Cooler'>
+                  <Button className='text-white'>Select</Button>
+                </Link>
+              )}
+            </div>
+          </div>
+          {/* CPU  */}
+          <div className='border-2 rounded-lg '>
+            <div className='flex justify-between items-center px-2'>
+              <div className='flex justify-center items-center'>
+                <span className='p-4'>
+                  <GiProcessor className='text-5xl' />
+                </span>
+
+                <p className=' p-4 rounded-md '>Cpu</p>
+              </div>
+
+              {catagory?.find((element) => element == "Cpu") ? (
+                <Button className='text-white'>Selected</Button>
+              ) : (
+                <Link href='/build/cpu?query=Cpu'>
+                  <Button className='text-white'>Select</Button>
+                </Link>
+              )}
+            </div>
+          </div>
+
+          {/* GPU */}
+          <div className='border-2 rounded-lg'>
+            <div className='flex justify-between items-center px-2'>
+              <div className='flex justify-center items-center'>
+                <span className='p-4'>
+                  <GiProcessor className='text-5xl' />
+                </span>
+
+                <p className=' p-4 rounded-md '>GPU </p>
+              </div>
+
+              {catagory?.find((element) => element == "processor") ? (
+                <Button className='text-white'>Selected</Button>
+              ) : (
+                <Link href='/build/gpu?query=GPU'>
+                  <Button className='text-white'>Select</Button>
+                </Link>
+              )}
+            </div>
+          </div>
+
+          {/* Keyboard */}
+          <div className='border-2 rounded-lg'>
+            <div className='flex justify-between items-center px-2'>
+              <div className='flex justify-center items-center'>
+                <span className='p-4'>
+                  <GiProcessor className='text-5xl' />
+                </span>
+
+                <p className=' p-4 rounded-md '>Keyboard </p>
+              </div>
+
+              {catagory?.find((element) => element == "processor") ? (
+                <Button className='text-white'>Selected</Button>
+              ) : (
+                <Link href='/build/Keyboard?query=Keyboard'>
+                  <Button className='text-white'>Select</Button>
+                </Link>
+              )}
+            </div>
+          </div>
+
+          <div className='border-2 rounded-lg '>
+            <div className='flex justify-between items-center px-2'>
+              <div className='flex justify-center items-center'>
+                <span className='p-4'>
+                  <BsFillMotherboardFill className='text-5xl' />
+                </span>
+                <p className=' p-4 rounded-md '>Motherboard </p>
+              </div>
+
+              {catagory?.find((element) => element == "Motherboard") ? (
+                <Button className='text-white'>Selected</Button>
+              ) : (
+                <Link href='/build/Motherboard?query=Motherboard'>
+                  <Button className='text-white'>Select</Button>
+                </Link>
+              )}
+            </div>
+          </div>
+
+          {/* mouse */}
+          <div className='border-2 rounded-lg '>
+            <div className='flex justify-between items-center px-2'>
+              <div className='flex justify-center items-center'>
+                <span className='p-4'>
+                  <BsMouseFill className='text-5xl' />
+                </span>
+                <p className=' p-4 rounded-md '>Mouse </p>
+              </div>
+
+              {catagory?.find((element) => element == "Mouse") ? (
+                <Button className='text-white'>Selected</Button>
+              ) : (
+                <Link href='/build/Mouse?query=Mouse'>
+                  <Button className='text-white'>Select</Button>
+                </Link>
+              )}
+            </div>
+          </div>
+
+          <div className='border-2 rounded-lg'>
             <div className='flex justify-between items-center px-2'>
               <div className='flex justify-center items-center'>
                 <span className='p-4'>
@@ -44,24 +195,27 @@ const buildPc = () => {
               )}
             </div>
           </div>
-          <div className='border-2 rounded-lg '>
+
+          <div className='border-2 rounded-lg'>
             <div className='flex justify-between items-center px-2'>
               <div className='flex justify-center items-center'>
                 <span className='p-4'>
-                  <BsFillMotherboardFill className='text-5xl' />
+                  <GiProcessor className='text-5xl' />
                 </span>
-                <p className=' p-4 rounded-md '>Motherboard </p>
+
+                <p className=' p-4 rounded-md '>PSU</p>
               </div>
 
-              {catagory?.find((element) => element == "motherboard") ? (
+              {catagory?.find((element) => element == "PSU") ? (
                 <Button className='text-white'>Selected</Button>
               ) : (
-                <Link href='/build/motherboard?query=motherboard'>
+                <Link href='/build/PSU?query=PSU'>
                   <Button className='text-white'>Select</Button>
                 </Link>
               )}
             </div>
           </div>
+
           <div className='border-2 rounded-lg '>
             <div className='flex justify-between items-center px-2'>
               <div className='flex justify-center items-center'>
@@ -71,7 +225,7 @@ const buildPc = () => {
                 <p className=' p-4 rounded-md '>RAM </p>
               </div>
 
-              {catagory?.find((element) => element == "ram") ? (
+              {catagory?.find((element) => element == "Ram") ? (
                 <Button className='text-white'>Selected</Button>
               ) : (
                 <Link href='/build/ram?query=Ram'>
@@ -85,69 +239,15 @@ const buildPc = () => {
             <div className='flex justify-between items-center px-2'>
               <div className='flex justify-center items-center'>
                 <span className='p-4'>
-                  <FaFilePowerpoint className='text-5xl' />
+                  <BsDeviceSsd className='text-5xl' />
                 </span>
-
-                <p className=' p-4 rounded-md '>Keyboard</p>
+                <p className=' p-4 rounded-md '>SSD </p>
               </div>
 
-              {catagory?.find((element) => element == "Power supply unit") ? (
+              {catagory?.find((element) => element == "SSD") ? (
                 <Button className='text-white'>Selected</Button>
               ) : (
-                <Link href='/build/keyboard?query=Keyboard'>
-                  <Button className='text-white'>Select</Button>
-                </Link>
-              )}
-            </div>
-          </div>
-          <div className='border-2 rounded-lg '>
-            <div className='flex justify-between items-center px-2'>
-              <div className='flex justify-center items-center'>
-                <span className='p-4'>
-                  <MdOutlineStorage className='text-5xl' />
-                </span>
-                <p className=' p-4 rounded-md '>Storage Device </p>
-              </div>
-
-              {catagory?.find((element) => element == "storage device") ? (
-                <Button className='text-white'>Selected</Button>
-              ) : (
-                <Link href='/build/storageDevice'>
-                  <Button className='text-white'>Select</Button>
-                </Link>
-              )}
-            </div>
-          </div>
-          <div className='border-2 rounded-lg '>
-            <div className='flex justify-between items-center px-2'>
-              <div className='flex justify-center items-center'>
-                <span className='p-4'>
-                  <FiMonitor className='text-5xl text-white' />
-                </span>
-                <p className=' p-4 rounded-md '>Monitor </p>
-              </div>
-              {catagory?.find((element) => element == "monitor") ? (
-                <Button className='text-white'>Selected</Button>
-              ) : (
-                <Link href='/build/storageDevice'>
-                  <Button className='text-white'>Select</Button>
-                </Link>
-              )}
-            </div>
-          </div>
-          <div className='border-2 rounded-lg '>
-            <div className='flex justify-between items-center px-2'>
-              <div className='flex justify-center items-center'>
-                <span className='p-4'>
-                  <BsMouseFill className='text-5xl' />
-                </span>
-                <p className=' p-4 rounded-md '>Mouse </p>
-              </div>
-
-              {catagory?.find((element) => element == "mouse") ? (
-                <Button className='text-white'>Selected</Button>
-              ) : (
-                <Link href='/build/mouse'>
+                <Link href='/build/SSD?query=SSD'>
                   <Button className='text-white'>Select</Button>
                 </Link>
               )}

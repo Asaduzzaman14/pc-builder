@@ -3,13 +3,15 @@ import CatagoryProduct from "@/components/Ui/catagoryProduct";
 import { useRouter } from "next/router";
 
 const Build = ({ products }) => {
-  console.log(products);
   const router = useRouter();
   const { query } = router?.query;
-  console.log(query);
+  // let values = query.split("-").join(" ");
 
-  const parts = products?.filter((product) => product?.Category === query);
-  console.log(parts);
+  const parts = products?.filter(
+    (product) =>
+      product?.Category === (query == "Cpu-Cooler" ? "Cpu Cooler" : query)
+  );
+  // console.log(parts);
 
   return (
     <div>
