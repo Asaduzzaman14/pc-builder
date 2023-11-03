@@ -7,6 +7,7 @@ import FeaturedProducts from "@/components/Ui/FeaturedProducts";
 import FeaturedCategories from "@/components/Ui/FeaturedCategories";
 import CatagoryProduct from "@/components/Ui/catagoryProduct";
 import { useState } from "react";
+import OurClient from "@/components/Ui/OurClient";
 
 export default function Home({ products }) {
   console.log(products);
@@ -29,6 +30,7 @@ export default function Home({ products }) {
         </div>
 
         <FeaturedCategories />
+        <OurClient />
       </>
     </>
   );

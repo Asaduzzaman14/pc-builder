@@ -26,3 +26,31 @@ h2 {
 p {
   font-weight: 500;
 }
+
+.slick-dots {
+  bottom: -30px !important;
+}
+
+.slick-dots li {
+  width: 30px !important;
+  height: 10px !important;
+  padding: 4px;
+}
+
+.slick-dots li button {
+  height: 10px !important;
+  width: 10px !important;
+  border-radius: 100px !important;
+}
+.slick-active button {
+  background: #01b0f8 !important;
+}
+
+.slick-dots button:hover {
+  background: #01b0f8 !important;
+}
+.slick-slide div {
+  display: flex;
+  flex-direction: column;
+  margin: 5px auto;
+}
