@@ -5,29 +5,26 @@ import React from "react";
 import { useSelector } from "react-redux";
 import {
   BsDeviceSsd,
+  BsFillCassetteFill,
   BsFillMotherboardFill,
+  BsGpuCard,
   BsMouseFill,
 } from "react-icons/bs";
-import { GiProcessor, GiStickFrame, GiWoodFrame } from "react-icons/gi";
-import { FiMonitor } from "react-icons/fi";
-import { MdOutlineStorage } from "react-icons/md";
-import { FaFilePowerpoint } from "react-icons/fa";
+import {
+  GiApolloCapsule,
+  GiProcessor,
+  GiStickFrame,
+  GiWoodFrame,
+} from "react-icons/gi";
+import { FiMonitor, FiSpeaker } from "react-icons/fi";
+import { PiComputerTower } from "react-icons/pi";
+import { FaKeyboard } from "react-icons/fa";
+import { RiZcoolLine } from "react-icons/ri";
+import { CgSmartphoneRam } from "react-icons/cg";
 
 const buildPc = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { products, catagory } = useSelector((state) => state.cart);
-
-  // console.log(products);
-  // console.log(catagory);
-
-  /* 
- 
- 
-ROM
-SSD
- 
-UPS
-*/
 
   return (
     <div>
@@ -39,14 +36,16 @@ UPS
             <div className='flex justify-between items-center px-2'>
               <div className='flex justify-center items-center'>
                 <span className='p-4'>
-                  <GiProcessor className='text-5xl' />
+                  <PiComputerTower className='text-5xl' />
                 </span>
 
                 <p className=' p-4 rounded-md '>Casing </p>
               </div>
 
               {catagory?.find((element) => element == "Casing") ? (
-                <Button className='text-white'>Selected</Button>
+                <Button className='text-white bg-green-400  hover:text-gray-700'>
+                  Selected
+                </Button>
               ) : (
                 <Link href='/build/casing?query=Casing'>
                   <Button className='text-white'>Select</Button>
@@ -59,14 +58,16 @@ UPS
             <div className='flex justify-between items-center px-2'>
               <div className='flex justify-center items-center'>
                 <span className='p-4'>
-                  <GiProcessor className='text-5xl' />
+                  <RiZcoolLine className='text-5xl' />
                 </span>
 
                 <p className=' p-4 rounded-md '>Cpu Cooler </p>
               </div>
 
               {catagory?.find((element) => element == "Cpu Cooler") ? (
-                <Button className='text-white'>Selected</Button>
+                <Button className='text-white bg-green-400 hover:text-gray-700'>
+                  Selected
+                </Button>
               ) : (
                 <Link href='/build/cpu-cooler?query=Cpu-Cooler'>
                   <Button className='text-white'>Select</Button>
@@ -86,7 +87,9 @@ UPS
               </div>
 
               {catagory?.find((element) => element == "Cpu") ? (
-                <Button className='text-white'>Selected</Button>
+                <Button className='text-white bg-green-400 hover:text-gray-700'>
+                  Selected
+                </Button>
               ) : (
                 <Link href='/build/cpu?query=Cpu'>
                   <Button className='text-white'>Select</Button>
@@ -100,14 +103,16 @@ UPS
             <div className='flex justify-between items-center px-2'>
               <div className='flex justify-center items-center'>
                 <span className='p-4'>
-                  <GiProcessor className='text-5xl' />
+                  <BsGpuCard className='text-5xl' />
                 </span>
 
                 <p className=' p-4 rounded-md '>GPU </p>
               </div>
 
               {catagory?.find((element) => element == "processor") ? (
-                <Button className='text-white'>Selected</Button>
+                <Button className='text-white bg-green-400 hover:text-gray-700'>
+                  Selected
+                </Button>
               ) : (
                 <Link href='/build/gpu?query=GPU'>
                   <Button className='text-white'>Select</Button>
@@ -121,14 +126,16 @@ UPS
             <div className='flex justify-between items-center px-2'>
               <div className='flex justify-center items-center'>
                 <span className='p-4'>
-                  <GiProcessor className='text-5xl' />
+                  <FaKeyboard className='text-5xl' />
                 </span>
 
                 <p className=' p-4 rounded-md '>Keyboard </p>
               </div>
 
               {catagory?.find((element) => element == "processor") ? (
-                <Button className='text-white'>Selected</Button>
+                <Button className='text-white bg-green-400 hover:text-gray-700'>
+                  Selected
+                </Button>
               ) : (
                 <Link href='/build/Keyboard?query=Keyboard'>
                   <Button className='text-white'>Select</Button>
@@ -147,7 +154,9 @@ UPS
               </div>
 
               {catagory?.find((element) => element == "Motherboard") ? (
-                <Button className='text-white'>Selected</Button>
+                <Button className='text-white bg-green-400 hover:text-gray-700'>
+                  Selected
+                </Button>
               ) : (
                 <Link href='/build/Motherboard?query=Motherboard'>
                   <Button className='text-white'>Select</Button>
@@ -167,7 +176,9 @@ UPS
               </div>
 
               {catagory?.find((element) => element == "Mouse") ? (
-                <Button className='text-white'>Selected</Button>
+                <Button className='text-white bg-green-400 hover:text-gray-700'>
+                  Selected
+                </Button>
               ) : (
                 <Link href='/build/Mouse?query=Mouse'>
                   <Button className='text-white'>Select</Button>
@@ -180,14 +191,16 @@ UPS
             <div className='flex justify-between items-center px-2'>
               <div className='flex justify-center items-center'>
                 <span className='p-4'>
-                  <GiProcessor className='text-5xl' />
+                  <FiSpeaker className='text-5xl' />
                 </span>
 
                 <p className=' p-4 rounded-md '>Speaker </p>
               </div>
 
               {catagory?.find((element) => element == "processor") ? (
-                <Button className='text-white'>Selected</Button>
+                <Button className='text-white bg-green-400 hover:text-gray-700'>
+                  Selected
+                </Button>
               ) : (
                 <Link href='/build/Speaker?query=Speaker'>
                   <Button className='text-white'>Select</Button>
@@ -200,14 +213,16 @@ UPS
             <div className='flex justify-between items-center px-2'>
               <div className='flex justify-center items-center'>
                 <span className='p-4'>
-                  <GiProcessor className='text-5xl' />
+                  <GiApolloCapsule className='text-5xl' />
                 </span>
 
                 <p className=' p-4 rounded-md '>PSU</p>
               </div>
 
               {catagory?.find((element) => element == "PSU") ? (
-                <Button className='text-white'>Selected</Button>
+                <Button className='text-white bg-green-400 hover:text-gray-700'>
+                  Selected
+                </Button>
               ) : (
                 <Link href='/build/PSU?query=PSU'>
                   <Button className='text-white'>Select</Button>
@@ -220,13 +235,15 @@ UPS
             <div className='flex justify-between items-center px-2'>
               <div className='flex justify-center items-center'>
                 <span className='p-4'>
-                  <BsDeviceSsd className='text-5xl' />
+                  <CgSmartphoneRam className='text-5xl' />
                 </span>
                 <p className=' p-4 rounded-md '>RAM </p>
               </div>
 
               {catagory?.find((element) => element == "Ram") ? (
-                <Button className='text-white'>Selected</Button>
+                <Button className='text-white bg-green-400 hover:text-gray-700'>
+                  Selected
+                </Button>
               ) : (
                 <Link href='/build/ram?query=Ram'>
                   <Button className='text-white'>Select</Button>
@@ -245,7 +262,9 @@ UPS
               </div>
 
               {catagory?.find((element) => element == "SSD") ? (
-                <Button className='text-white'>Selected</Button>
+                <Button className='text-white bg-green-400 hover:text-gray-700'>
+                  Selected
+                </Button>
               ) : (
                 <Link href='/build/SSD?query=SSD'>
                   <Button className='text-white'>Select</Button>
@@ -256,33 +275,31 @@ UPS
         </div>
 
         <div className='my-5 text-center'>
-          <Button className='text-white my-4'>BUILD</Button>
           <div className='grid justify-items-center md:grid-cols-2  gap-3'>
             {products?.map((product) => {
               return (
                 <Card
-                  key={product.id}
-                  className='p-0  bg-slate-900'
+                  key={product._id}
+                  className='bg-[#3c94b4]'
                   style={{
-                    padding: "5px",
+                    padding: "2px",
                     width: 350,
-                    padding: "0px",
                     margin: "0",
                   }}
                 >
                   <div className='flex justify-between gap-5 items-center'>
                     <div className='flex gap-5'>
                       <Image
-                        alt='aa'
-                        width={100}
-                        height={100}
+                        alt='image'
+                        className='rounded-sm'
+                        width={80}
+                        height={80}
                         src={product?.img1}
                       />
                       <div className='text-base font-medium text-gray-300'>
                         <p>Name: {product?.Category}</p>
                         <p>Price: {product?.Price}</p>
                         <p>Status: {product?.Status}</p>
-                        <p>Rating: {product?.AvgRatings}</p>
                       </div>
                     </div>
                   </div>
@@ -290,6 +307,9 @@ UPS
               );
             })}
           </div>
+          {products.length && (
+            <Button className='text-white my-4'>BUILD</Button>
+          )}
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ const OurClient = () => {
   const settings = {
     className: "mt-5 text-white text-left",
     dotPosition: "bottom",
-    autoplay: false,
+    autoplay: true,
 
     responsive: [
       {
@@ -51,6 +51,7 @@ const OurClient = () => {
             >
               <div className='card max-w-[260px] lg:max-w-[320px] text-left'>
                 <Image
+                  loading='lazy'
                   width={"350"}
                   height={"350"}
                   className='card-img-top'
@@ -72,6 +73,7 @@ const OurClient = () => {
             <div style={{ marginRight: "10px" }}>
               <div className='card max-w-[260px] lg:max-w-[320px] text-left'>
                 <Image
+                  loading='lazy'
                   width={"350"}
                   height={"350"}
                   className='card-img-top'
@@ -95,6 +97,7 @@ const OurClient = () => {
             <div style={{ marginRight: "10px" }}>
               <div className='card max-w-[260px] lg:max-w-[320px] text-left'>
                 <Image
+                  loading='lazy'
                   width={"350"}
                   height={"350"}
                   className='card-img-top'
@@ -117,6 +120,7 @@ const OurClient = () => {
             <div style={{ marginRight: "10px" }}>
               <div className='card max-w-[260px] lg:max-w-[320px] text-left'>
                 <Image
+                  loading='lazy'
                   width={"350"}
                   height={"350"}
                   className='card-img-top'

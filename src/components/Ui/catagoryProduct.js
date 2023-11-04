@@ -41,7 +41,7 @@ const CatagoryProduct = ({ products }) => {
                   height={"100%"}
                   src={product?.img1}
                 />
-                <div className='text-base font-medium text-gray-300'>
+                <div className='text-base  text-gray-300'>
                   <p>Category: {product?.Category}</p>
                   <p>Brand: {product?.Brand}</p>
                   <p>Price: {product?.Price}</p>
