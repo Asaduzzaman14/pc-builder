@@ -2,23 +2,6 @@ import Link from "next/link";
 import React from "react";
 
 const FeaturedCategories = () => {
-  /* 
-Casing
-Cpu Cooler
-CPU
-GPU
-Keyboard
-MotherBoard
-Mouse
-Monitor
-PSU
-RAM
-ROM
-SSD
-Speaker
-UPS
-*/
-
   return (
     <div className='pt-8'>
       <h2>Featured Categories</h2>

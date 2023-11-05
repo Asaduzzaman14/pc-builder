@@ -25,10 +25,6 @@ export default function Home({ products }) {
         <Banner />
         <FeaturedProducts products={products.data} />
 
-        <div>
-          <h2>pagination</h2>
-        </div>
-
         <FeaturedCategories />
         <OurClient />
       </>
