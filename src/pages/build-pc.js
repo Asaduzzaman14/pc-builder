@@ -307,7 +307,7 @@ const buildPc = () => {
               );
             })}
           </div>
-          {products.length && (
+          {products.length > 0 && (
             <Button className='text-white my-4'>BUILD</Button>
           )}
         </div>
