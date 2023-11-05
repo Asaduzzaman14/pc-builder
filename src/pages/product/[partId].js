@@ -1,5 +1,5 @@
 import RootLayout from "@/components/Layoutes/RootLayout";
-import { Button, Card } from "antd";
+import { Button, Card, Rate } from "antd";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -25,7 +25,17 @@ const ProductDetails = ({ product }) => {
             <p>Brand: {product?.Brand}</p>
             <p>Price: {product?.Price}</p>
             <p>Status: {product?.Status}</p>
-            <p>Rating: {product?.AvgRatings}</p>
+
+            {/* <p>Rating: {product?.AvgRatings}</p> */}
+            <>
+              Rating:{" "}
+              <Rate
+                className=''
+                allowHalf
+                disabled
+                defaultValue={product?.AvgRatings}
+              />
+            </>
             {product?.Frequency && <p>Frequency: {product?.Frequency}</p>}
             {product?.Latency && <p>Latency: {product?.Latency}</p>}
             {product?.Model && <p>Model: {product?.Model}</p>}
