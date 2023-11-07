@@ -8,7 +8,7 @@ import { useState } from "react";
 const items = [
   {
     label: (
-      <Link rel='noopener ' href='/processor'>
+      <Link rel='noopener ' href='/category/processor'>
         Processor
       </Link>
     ),
@@ -16,7 +16,7 @@ const items = [
   },
   {
     label: (
-      <Link rel='' href='motherboard'>
+      <Link rel='' href='/category/motherboard'>
         Motherboard
       </Link>
     ),
@@ -24,7 +24,7 @@ const items = [
   },
   {
     label: (
-      <Link rel='' href='ram'>
+      <Link rel='' href='/category/ram'>
         RAM
       </Link>
     ),
@@ -32,7 +32,7 @@ const items = [
   },
   {
     label: (
-      <Link rel='' href='powerSupplyUnit'>
+      <Link rel='' href='/category/powerSupplyUnit'>
         Power Supply Unit
       </Link>
     ),
@@ -40,7 +40,7 @@ const items = [
   },
   {
     label: (
-      <Link rel='' href='storageDevice'>
+      <Link rel='' href='/category/storageDevice'>
         Storage Device
       </Link>
     ),
@@ -48,7 +48,7 @@ const items = [
   },
   {
     label: (
-      <Link rel='' href='monitor'>
+      <Link rel='' href='/category/monitor'>
         Monitor
       </Link>
     ),
@@ -56,7 +56,7 @@ const items = [
   },
   {
     label: (
-      <Link rel='' href='mouse'>
+      <Link rel='' href='/category/mouse'>
         Mouse
       </Link>
     ),
