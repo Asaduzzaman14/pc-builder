@@ -40,7 +40,7 @@ export const getStaticProps = async () => {
   const result = await fetch(
     `https://pc-builder-gules-psi.vercel.app/api/v1/pc-parts`
   );
-  const data = await result.json();
+  const data = await result?.json();
 
   return {
     props: {
