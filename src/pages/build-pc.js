@@ -47,7 +47,7 @@ const buildPc = () => {
                   Selected
                 </Button>
               ) : (
-                <Link href='/build/casing?query=Casing'>
+                <Link href='/build/Casing?query=Casing'>
                   <Button className='text-white'>Select</Button>
                 </Link>
               )}
@@ -91,7 +91,7 @@ const buildPc = () => {
                   Selected
                 </Button>
               ) : (
-                <Link href='/build/cpu?query=Cpu'>
+                <Link href='/build/cpu?query=CPU'>
                   <Button className='text-white'>Select</Button>
                 </Link>
               )}
@@ -153,12 +153,12 @@ const buildPc = () => {
                 <p className=' p-4 rounded-md '>Motherboard </p>
               </div>
 
-              {catagory?.find((element) => element == "Motherboard") ? (
+              {catagory?.find((element) => element == "MotherBoard") ? (
                 <Button className='text-white bg-green-400 hover:text-gray-700'>
                   Selected
                 </Button>
               ) : (
-                <Link href='/build/Motherboard?query=Motherboard'>
+                <Link href='/build/MotherBoard?query=MotherBoard'>
                   <Button className='text-white'>Select</Button>
                 </Link>
               )}

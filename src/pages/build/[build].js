@@ -6,18 +6,28 @@ const Build = ({ products }) => {
   const router = useRouter();
   const { query } = router?.query;
   // let values = query.split("-").join(" ");
+  console.log(query);
+  // const parts = products?.filter((product) => {
+  //   return product?.Category === (query == "Cpu-Cooler" ? "Cpu Cooler" : query);
+  //   // return product?.Category === (query == "Cpu-Cooler" ? "Cpu Cooler" : query);
+  // });
 
-  const parts = products?.filter(
-    (product) =>
-      product?.Category === (query == "Cpu-Cooler" ? "Cpu Cooler" : query)
-  );
-  // console.log(parts);
+  const parts = products?.filter((product) => {
+    return (
+      product?.Category === (query === "Cpu-Cooler" ? "Cpu Cooler" : query)
+    );
+  });
+
+  console.log(parts);
 
   return (
     <div>
-      <h2>{query}</h2>
-      <h2>Thsi is new page</h2>
-      <CatagoryProduct products={parts} />
+      <h2 className='my-2'>{query}</h2>
+      <div className='grid lg:grid-cols-2 gap-2'>
+        {parts?.map((part) => {
+          return <CatagoryProduct key={part?._id} product={part} />;
+        })}
+      </div>
     </div>
   );
 };
@@ -33,7 +43,6 @@ export const getServerSideProps = async () => {
     "https://pc-builder-gules-psi.vercel.app/api/v1/pc-parts"
   );
   const data = await result?.json();
-  // console.log(data);
   return {
     props: {
       products: data?.data,

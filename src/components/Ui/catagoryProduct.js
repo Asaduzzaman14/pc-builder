@@ -6,7 +6,6 @@ import React from "react";
 import { useDispatch } from "react-redux";
 
 const CatagoryProduct = ({ product }) => {
-  console.log(product?.Category);
   const router = useRouter();
   console.log(product, "1111");
   const dispatch = useDispatch();
