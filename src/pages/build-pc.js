@@ -86,7 +86,7 @@ const buildPc = () => {
                 <p className=' p-4 rounded-md '>Cpu</p>
               </div>
 
-              {catagory?.find((element) => element == "Cpu") ? (
+              {catagory?.find((element) => element == "CPU") ? (
                 <Button className='text-white bg-green-400 hover:text-gray-700'>
                   Selected
                 </Button>
@@ -109,7 +109,7 @@ const buildPc = () => {
                 <p className=' p-4 rounded-md '>GPU </p>
               </div>
 
-              {catagory?.find((element) => element == "processor") ? (
+              {catagory?.find((element) => element == "GPU") ? (
                 <Button className='text-white bg-green-400 hover:text-gray-700'>
                   Selected
                 </Button>
@@ -129,10 +129,10 @@ const buildPc = () => {
                   <FaKeyboard className='text-5xl' />
                 </span>
 
-                <p className=' p-4 rounded-md '>Keyboard </p>
+                <p className=' p-4 rounded-md '>Keyboard</p>
               </div>
 
-              {catagory?.find((element) => element == "processor") ? (
+              {catagory?.find((element) => element == "Keyboard") ? (
                 <Button className='text-white bg-green-400 hover:text-gray-700'>
                   Selected
                 </Button>
@@ -240,12 +240,12 @@ const buildPc = () => {
                 <p className=' p-4 rounded-md '>RAM </p>
               </div>
 
-              {catagory?.find((element) => element == "Ram") ? (
+              {catagory?.find((element) => element == "RAM") ? (
                 <Button className='text-white bg-green-400 hover:text-gray-700'>
                   Selected
                 </Button>
               ) : (
-                <Link href='/build/ram?query=Ram'>
+                <Link href='/build/ram?query=RAM'>
                   <Button className='text-white'>Select</Button>
                 </Link>
               )}
@@ -275,6 +275,7 @@ const buildPc = () => {
         </div>
 
         <div className='my-5 text-center'>
+          {products.length > 0 && <h2 className='py-2'>MY PARTS</h2>}
           <div className='grid justify-items-center md:grid-cols-2  gap-3'>
             {products?.map((product) => {
               return (

@@ -15,17 +15,39 @@ const Banner = () => {
     // background: "#364d79",
     width: "1200px",
   };
+  const settings = {
+    className: "mt-5 text-white text-left",
+    autoplay: true,
+    dots: false,
+    speed: 800,
+    responsive: [
+      {
+        breakpoint: 768, // Mobile breakpoint (max-width: 767px)
+        settings: {
+          slidesToShow: 1, // Show one item at a time on mobile
+          slidesToScroll: 1, // Scroll one item at a time on mobile
+        },
+      },
+    ],
+  };
+
   return (
     <div>
-      <Carousel autoplay>
+      <Carousel {...settings}>
         <div>
           <div style={contentStyle}>
-            <Image alt='aa' width={"cover"} height={500} src={img2} />
+            <Image
+              className='w-full'
+              alt='aa'
+              // width={"500"}
+              height={500}
+              src={img2}
+            />
           </div>
         </div>
         <div>
           <div style={contentStyle}>
-            <Image alt='aa' width={"1200px"} height={500} src={img3} />
+            <Image alt='aa' width={"1200"} height={500} src={img3} />
           </div>
         </div>
       </Carousel>

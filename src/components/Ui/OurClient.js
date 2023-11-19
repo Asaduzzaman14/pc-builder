@@ -9,7 +9,6 @@ const OurClient = () => {
     className: "mt-5 text-white text-left",
     dotPosition: "bottom",
     autoplay: true,
-
     responsive: [
       {
         breakpoint: 768, // Mobile breakpoint (max-width: 767px)
@@ -21,12 +20,12 @@ const OurClient = () => {
       {
         breakpoint: 992, // Tablet breakpoint (max-width: 991px)
         settings: {
-          slidesToShow: 2, // Show two items at a time on tablets
+          slidesToShow: 3, // Show two items at a time on tablets
           slidesToScroll: 1, // Scroll one item at a time on tablets
         },
       },
       {
-        breakpoint: 1200, // Larger screens breakpoint (min-width: 992px)
+        breakpoint: 1000, // Larger screens breakpoint (min-width: 992px)
         settings: {
           slidesToShow: 3, // Show three items at a time on larger screens
           slidesToScroll: 1, // Scroll one item at a time on larger screens
@@ -36,25 +35,25 @@ const OurClient = () => {
   };
 
   return (
-    <section className='body py-3'>
+    <section className='body py-5'>
       <h2>Our Client</h2>
 
       <div className='gtco-testimonials'>
-        <div className='owl-carousel owl-carousel1 owl-theme'>
+        <div className='mb-5 owl-carousel  owl-carousel1 owl-theme'>
           <Carousel
             className='item text-left flex justify-center items-center  h-full mx-auto'
             {...settings}
           >
             <div
               style={{ marginRight: "10px" }}
-              className='text-white   text-left max-w-[280px] mx-auto lg:max-w-[320px] '
+              className='text-white border-2 rounded-md bg-gray-800  text-left max-w-[280px] mx-auto lg:max-w-[320px] '
             >
               <div className='card max-w-[260px] lg:max-w-[320px] text-left'>
                 <Image
                   loading='lazy'
-                  width={"350"}
+                  width={"260"}
                   height={"350"}
-                  className='card-img-top'
+                  className='card-img-top rounded-md p-1'
                   src='https://images.unsplash.com/photo-1572561300743-2dd367ed0c9a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=300'
                   alt=''
                 />
@@ -70,13 +69,16 @@ const OurClient = () => {
                 </div>
               </div>
             </div>
-            <div style={{ marginRight: "10px" }}>
+            <div
+              style={{ marginRight: "10px" }}
+              className='text-white border-2 rounded-md bg-gray-800  text-left max-w-[280px] mx-auto lg:max-w-[320px] '
+            >
               <div className='card max-w-[260px] lg:max-w-[320px] text-left'>
                 <Image
                   loading='lazy'
-                  width={"350"}
+                  width={"260"}
                   height={"350"}
-                  className='card-img-top'
+                  className='card-img-top rounded-md p-1'
                   src='https://images.unsplash.com/photo-1588361035994-295e21daa761?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=301'
                   alt=''
                 />
@@ -94,13 +96,16 @@ const OurClient = () => {
                 </div>
               </div>
             </div>
-            <div style={{ marginRight: "10px" }}>
+            <div
+              style={{ marginRight: "10px" }}
+              className='text-white border-2 rounded-md bg-gray-800  text-left max-w-[280px] mx-auto lg:max-w-[320px] '
+            >
               <div className='card max-w-[260px] lg:max-w-[320px] text-left'>
                 <Image
                   loading='lazy'
-                  width={"350"}
+                  width={"260"}
                   height={"350"}
-                  className='card-img-top'
+                  className='card-img-top rounded-md p-1'
                   src='https://images.unsplash.com/photo-1575377222312-dd1a63a51638?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=302&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=302'
                   alt=''
                 />
@@ -117,13 +122,16 @@ const OurClient = () => {
                 </div>
               </div>
             </div>
-            <div style={{ marginRight: "10px" }}>
+            <div
+              style={{ marginRight: "10px" }}
+              className='text-white border-2 rounded-md bg-gray-800  text-left max-w-[280px] mx-auto lg:max-w-[320px] '
+            >
               <div className='card max-w-[260px] lg:max-w-[320px] text-left'>
                 <Image
                   loading='lazy'
-                  width={"350"}
+                  width={"260"}
                   height={"350"}
-                  className='card-img-top'
+                  className='card-img-top rounded-md p-1'
                   src='https://images.unsplash.com/photo-1549836938-d278c5d46d20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=303&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=303'
                   alt=''
                 />
