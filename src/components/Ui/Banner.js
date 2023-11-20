@@ -20,15 +20,6 @@ const Banner = () => {
     autoplay: true,
     dots: false,
     speed: 800,
-    responsive: [
-      {
-        breakpoint: 768, // Mobile breakpoint (max-width: 767px)
-        settings: {
-          slidesToShow: 1, // Show one item at a time on mobile
-          slidesToScroll: 1, // Scroll one item at a time on mobile
-        },
-      },
-    ],
   };
 
   return (

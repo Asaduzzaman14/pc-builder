@@ -11,24 +11,17 @@ const OurClient = () => {
     autoplay: true,
     responsive: [
       {
-        breakpoint: 768, // Mobile breakpoint (max-width: 767px)
+        breakpoint: 767, // Mobile breakpoint (max-width: 767px)
         settings: {
           slidesToShow: 1, // Show one item at a time on mobile
           slidesToScroll: 1, // Scroll one item at a time on mobile
         },
       },
       {
-        breakpoint: 992, // Tablet breakpoint (max-width: 991px)
+        breakpoint: 1200, // Mobile breakpoint (max-width: 767px)
         settings: {
-          slidesToShow: 3, // Show two items at a time on tablets
-          slidesToScroll: 1, // Scroll one item at a time on tablets
-        },
-      },
-      {
-        breakpoint: 1000, // Larger screens breakpoint (min-width: 992px)
-        settings: {
-          slidesToShow: 3, // Show three items at a time on larger screens
-          slidesToScroll: 1, // Scroll one item at a time on larger screens
+          slidesToShow: 3, // Show one item at a time on mobile
+          slidesToScroll: 1, // Scroll one item at a time on mobile
         },
       },
     ],
@@ -48,10 +41,10 @@ const OurClient = () => {
               style={{ marginRight: "10px" }}
               className='text-white border-2 rounded-md bg-gray-800  text-left max-w-[280px] mx-auto lg:max-w-[320px] '
             >
-              <div className='card max-w-[260px] lg:max-w-[320px] text-left'>
+              <div className='card p-2 max-w-[260px] lg:max-w-[320px] text-left'>
                 <Image
                   loading='lazy'
-                  width={"260"}
+                  width={"500"}
                   height={"350"}
                   className='card-img-top rounded-md p-1'
                   src='https://images.unsplash.com/photo-1572561300743-2dd367ed0c9a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=300'
@@ -73,16 +66,15 @@ const OurClient = () => {
               style={{ marginRight: "10px" }}
               className='text-white border-2 rounded-md bg-gray-800  text-left max-w-[280px] mx-auto lg:max-w-[320px] '
             >
-              <div className='card max-w-[260px] lg:max-w-[320px] text-left'>
+              <div className='card p-2 max-w-[260px] lg:max-w-[320px] text-left'>
                 <Image
                   loading='lazy'
-                  width={"260"}
+                  width={"500"}
                   height={"350"}
                   className='card-img-top rounded-md p-1'
                   src='https://images.unsplash.com/photo-1588361035994-295e21daa761?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=301'
                   alt=''
                 />
-
                 <div className='card-body mt-3'>
                   <h5 className='font-semibold text-lg text-[#01b0f8]'>
                     Missy Limana
@@ -100,10 +92,10 @@ const OurClient = () => {
               style={{ marginRight: "10px" }}
               className='text-white border-2 rounded-md bg-gray-800  text-left max-w-[280px] mx-auto lg:max-w-[320px] '
             >
-              <div className='card max-w-[260px] lg:max-w-[320px] text-left'>
+              <div className='card p-2 max-w-[260px] lg:max-w-[320px] text-left'>
                 <Image
                   loading='lazy'
-                  width={"260"}
+                  width={"500"}
                   height={"350"}
                   className='card-img-top rounded-md p-1'
                   src='https://images.unsplash.com/photo-1575377222312-dd1a63a51638?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=302&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=302'
@@ -126,10 +118,10 @@ const OurClient = () => {
               style={{ marginRight: "10px" }}
               className='text-white border-2 rounded-md bg-gray-800  text-left max-w-[280px] mx-auto lg:max-w-[320px] '
             >
-              <div className='card max-w-[260px] lg:max-w-[320px] text-left'>
+              <div className='card p-2 max-w-[260px] lg:max-w-[320px] text-left'>
                 <Image
                   loading='lazy'
-                  width={"260"}
+                  width={"500"}
                   height={"350"}
                   className='card-img-top rounded-md p-1'
                   src='https://images.unsplash.com/photo-1549836938-d278c5d46d20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=303&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=303'

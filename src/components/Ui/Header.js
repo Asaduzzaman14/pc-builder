@@ -8,48 +8,48 @@ import { useState } from "react";
 const items = [
   {
     label: (
-      <Link rel='noopener ' href='/category/processor'>
-        Processor
+      <Link rel='noopener ' href='/category/casing'>
+        Casing
       </Link>
     ),
     key: "0",
   },
   {
     label: (
-      <Link rel='' href='/category/motherboard'>
-        Motherboard
+      <Link rel='noopener ' href='/category/cpuCooler'>
+        Cpu Cooler
       </Link>
     ),
     key: "1",
   },
   {
     label: (
-      <Link rel='' href='/category/ram'>
-        RAM
+      <Link rel='noopener ' href='/category/cpu'>
+        Cpu
       </Link>
     ),
     key: "2",
   },
   {
     label: (
-      <Link rel='' href='/category/powerSupplyUnit'>
-        Power Supply Unit
+      <Link rel='noopener ' href='/category/gpu'>
+        GPU
       </Link>
     ),
     key: "3",
   },
   {
     label: (
-      <Link rel='' href='/category/storageDevice'>
-        Storage Device
+      <Link rel='' href='/category/keyboard'>
+        Keyboard
       </Link>
     ),
     key: "4",
   },
   {
     label: (
-      <Link rel='' href='/category/monitor'>
-        Monitor
+      <Link rel='' href='/category/motherboard'>
+        Motherboard
       </Link>
     ),
     key: "5",
@@ -61,6 +61,47 @@ const items = [
       </Link>
     ),
     key: "6",
+  },
+  {
+    label: (
+      <Link rel='' href='/category/speaker'>
+        Speaker
+      </Link>
+    ),
+    key: "7",
+  },
+  {
+    label: (
+      <Link rel='' href='/category/monitor'>
+        Monitor
+      </Link>
+    ),
+    key: "8",
+  },
+  {
+    label: (
+      <Link rel='' href='/category/psu'>
+        PSU
+      </Link>
+    ),
+    key: "9",
+  },
+
+  {
+    label: (
+      <Link rel='' href='/category/ram'>
+        RAM
+      </Link>
+    ),
+    key: "10",
+  },
+  {
+    label: (
+      <Link rel='' href='/category/ssd'>
+        SSD
+      </Link>
+    ),
+    key: "11",
   },
 ];
 
