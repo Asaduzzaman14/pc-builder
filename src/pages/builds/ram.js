@@ -3,14 +3,15 @@ import CatagoryProduct from "@/components/Ui/catagoryProduct";
 import React from "react";
 
 const Ram = ({ products }) => {
-  const ram = products?.filter((product) => product?.Category === "ram");
-
+  console.log(products);
   return (
     <div>
       <h2>Ram</h2>
-      <>
-        <CatagoryProduct products={ram} />
-      </>
+      <div className='grid lg:grid-cols-2 gap-2'>
+        {products?.map((part) => {
+          return <CatagoryProduct key={part?._id} product={part} />;
+        })}
+      </div>
     </div>
   );
 };
@@ -23,10 +24,10 @@ Ram.getLayout = function getLayout(page) {
 
 export const getServerSideProps = async () => {
   const result = await fetch(
-    "https://pc-builder-gules-psi.vercel.app/api/v1/pc-parts"
+    "https://pc-builder-gules-psi.vercel.app/api/v1/pc-parts?Category=RAM"
   );
   const data = await result.json();
-
+  console.log(data);
   return {
     props: {
       products: data?.data,

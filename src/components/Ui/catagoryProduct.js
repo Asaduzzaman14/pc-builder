@@ -32,31 +32,37 @@ const CatagoryProduct = ({ product }) => {
           margin: "0",
         }}
       >
-        <div className='flex justify-between gap-5 items-center'>
+        <div className='flex lg:flex justify-between gap-5 items-center'>
           <Image alt='aa' width={300} height={"100%"} src={product?.img1} />
-          <div className='text-base  text-gray-300'>
-            <p>Category: {product?.Category}</p>
-            <p>Brand: {product?.Brand}</p>
-            <p>Price: {product?.Price}</p>
-            <p>Status: {product?.Status}</p>
-            {/* <p>Rating: {product?.AvgRatings}</p> */}
-            <p>
-              Rating: <Rate allowHalf disabled defaultValue={2.5} />
-            </p>
-          </div>
 
-          <div className='flex flex-col gap-2 items-stretch justify-items-stretch'>
-            <Link href={`/product/${product?._id}`}>
-              <Button className='text-white'>DETAILS</Button>
-            </Link>
-
-            <div onClick={() => handleAddProduct(product)}>
-              <Button className='text-white w-full'>Add</Button>
+          <div>
+            <div className='text-base  text-gray-300'>
+              <p>Category: {product?.Category}</p>
+              <p>Brand: {product?.Brand}</p>
+              <p>Price: {product?.Price}</p>
+              <p>Status: {product?.Status}</p>
+              <div className='flex gap-x-1'>
+                <p className='inline-block'>Rating:</p>
+                <Rate allowHalf disabled defaultValue={product?.AvgRatings} />
+              </div>
             </div>
+
+            {/* buttons  */}
+
+            <div className='pt-2 flex gap-2 items-end justify-items-end align-bottom mt-auto'>
+              <Link href={`/product/${product?._id}`}>
+                <Button className='text-white w-[85px]'>DETAILS</Button>
+              </Link>
+
+              <div onClick={() => handleAddProduct(product)}>
+                <Button className='text-white w-[85px]'>Add</Button>
+              </div>
+            </div>
+
+            {/* buttons  */}
           </div>
         </div>
       </Card>
-      {/* ))} */}
     </div>
   );
 };
