@@ -2,10 +2,10 @@ import RootLayout from "@/components/Layoutes/RootLayout";
 import CatagoryProduct from "@/components/Ui/catagoryProduct";
 import React from "react";
 
-const Gpu = ({ products }) => {
+const Monitor = ({ products }) => {
   return (
     <div>
-      <h2 className='py-2'>GPU</h2>
+      <h2 className='py-2'>Monitor</h2>
       <div className='grid lg:grid-cols-2 gap-2'>
         {products?.map((part) => {
           return <CatagoryProduct key={part?._id} product={part} />;
@@ -15,15 +15,15 @@ const Gpu = ({ products }) => {
   );
 };
 
-export default Gpu;
+export default Monitor;
 
-Gpu.getLayout = function getLayout(page) {
+Monitor.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
 export const getServerSideProps = async () => {
   const result = await fetch(
-    "https://pc-builder-gules-psi.vercel.app/api/v1/pc-parts?Category=GPU"
+    "https://pc-builder-gules-psi.vercel.app/api/v1/pc-parts?Category=Monitor"
   );
   const data = await result.json();
   console.log(data);
