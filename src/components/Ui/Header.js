@@ -16,7 +16,7 @@ const items = [
   },
   {
     label: (
-      <Link rel='noopener ' href='/category/cpuCooler'>
+      <Link rel='noopener ' href='/category/cpu-cooler'>
         Cpu Cooler
       </Link>
     ),
