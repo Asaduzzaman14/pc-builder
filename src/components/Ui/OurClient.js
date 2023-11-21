@@ -13,7 +13,14 @@ const OurClient = () => {
       {
         breakpoint: 767, // Mobile breakpoint (max-width: 767px)
         settings: {
-          slidesToShow: 1, // Show one item at a time on mobile
+          slidesToShow: 3, // Show one item at a time on mobile
+          slidesToScroll: 1, // Scroll one item at a time on mobile
+        },
+      },
+      {
+        breakpoint: 900, // Mobile breakpoint (max-width: 767px)
+        settings: {
+          slidesToShow: 3, // Show one item at a time on mobile
           slidesToScroll: 1, // Scroll one item at a time on mobile
         },
       },

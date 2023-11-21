@@ -26,6 +26,28 @@ const buildPc = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { products, catagory } = useSelector((state) => state.cart);
 
+  console.log(products);
+
+  const buildPc = async () => {
+    console.log(...products);
+    alert("pc build successful");
+    // try {
+    //   const response = await fetch("YOUR_POST_API_ENDPOINT", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(...products),
+    //   });
+
+    //   // Handle the response as needed
+    //   const data = await response.json();
+    //   console.log(data);
+    // } catch (error) {
+    //   console.error("Error during POST request:", error);
+    // }
+  };
+
   return (
     <div>
       <h2>BUILD YOUR PC</h2>
@@ -309,7 +331,9 @@ const buildPc = () => {
             })}
           </div>
           {products.length > 0 && (
-            <Button className='text-white my-4'>BUILD</Button>
+            <Button onClick={() => buildPc()} className='text-white my-4'>
+              BUILD
+            </Button>
           )}
         </div>
       </div>
