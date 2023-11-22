@@ -21,31 +21,46 @@ import { PiComputerTower } from "react-icons/pi";
 import { FaKeyboard } from "react-icons/fa";
 import { RiZcoolLine } from "react-icons/ri";
 import { CgSmartphoneRam } from "react-icons/cg";
+import { useSession } from "next-auth/react";
 
-const buildPc = () => {
+const BuildPc = () => {
+  const { data: session } = useSession();
+
+  console.log(session?.user);
+
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { products, catagory } = useSelector((state) => state.cart);
 
   console.log(products);
 
-  const buildPc = async () => {
-    console.log(...products);
-    alert("pc build successful");
-    // try {
-    //   const response = await fetch("YOUR_POST_API_ENDPOINT", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(...products),
-    //   });
+  const myData = {
+    email: session?.user.email,
+    products: products,
+  };
 
-    //   // Handle the response as needed
-    //   const data = await response.json();
-    //   console.log(data);
-    // } catch (error) {
-    //   console.error("Error during POST request:", error);
-    // }
+  const buildPc = async () => {
+    console.log(myData);
+
+    // alert("pc build successful");
+    try {
+      const response = await fetch(
+        "http://localhost:5000/api/v1/pc-build",
+        // "https://pc-builder-gules-psi.vercel.app/api/v1/pc-build",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(myData),
+        }
+      );
+
+      // Handle the response as needed
+      const resData = await response.json();
+      console.log(resData);
+    } catch (error) {
+      console.error("Error during POST request:", error);
+    }
   };
 
   return (
@@ -341,9 +356,9 @@ const buildPc = () => {
   );
 };
 
-export default buildPc;
+export default BuildPc;
 
-buildPc.getLayout = function getLayout(page) {
+BuildPc.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
