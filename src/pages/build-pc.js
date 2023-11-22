@@ -22,6 +22,7 @@ import { FaKeyboard } from "react-icons/fa";
 import { RiZcoolLine } from "react-icons/ri";
 import { CgSmartphoneRam } from "react-icons/cg";
 import { useSession } from "next-auth/react";
+import Swal from "sweetalert2";
 
 const BuildPc = () => {
   const { data: session } = useSession();
@@ -40,6 +41,12 @@ const BuildPc = () => {
 
   const buildPc = async () => {
     console.log(myData);
+    Swal.fire({
+      title: "Build success",
+      // text: "You clicked the button!",
+      icon: "success",
+    });
+    return;
 
     // alert("pc build successful");
     try {
@@ -54,9 +61,12 @@ const BuildPc = () => {
           body: JSON.stringify(myData),
         }
       );
-
-      // Handle the response as needed
-      const resData = await response.json();
+      const resData = await response?.json();
+      Swal.fire({
+        title: "Build success",
+        // text: "You clicked the button!",
+        icon: "success",
+      });
       console.log(resData);
     } catch (error) {
       console.error("Error during POST request:", error);
