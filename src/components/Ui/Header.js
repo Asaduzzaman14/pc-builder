@@ -138,28 +138,31 @@ const App = () => {
             <ion-icon name={open ? "close" : "menu"}>ICON </ion-icon>
           </div>
 
-          {/* <div className=' px-0 basis-3/4 w-[700px] '> */}
           <div className=' px-0 '>
-            {/* <ul className={`  lg:flex  justify-between lg:pr-5 lg:items-center lg:py-0  lg:pb-0 pb-8 absolute lg:static bg-white lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9 lg:gap-30 transition-all duration-500 ease-in ${open ? 'top-[100px]' : 'top-[-480px]'}`}> */}
             <ul
-              className={`  lg:flex  justify-between lg:pr-5 lg:items-end lg:py-0  lg:pb-0 pb-8 absolute lg:static bg-gray-900 lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0  transition-all duration-500 ease-in ${
+              className={`  lg:flex justify-between lg:pr-5 lg:items-end lg:py-0  lg:pb-0 pb-8 absolute lg:static bg-gray-900 lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0  transition-all duration-500 ease-in ${
                 open ? "top-[60px]" : "top-[-480px]"
               }`}
             >
               <div className='lg:flex ml-5 lg lg:justify-between'>
-                <Dropdown
+                {/* <Dropdown
                   menu={{
                     items,
                   }}
                 >
-                  <p
-                    className='text-lg text-gray-200 p-2 group-hover:border-b-2 border-b-primary translate-x-0 hover:translate-x-3 underline-offset-[20px] hover:text-red-600 font-semibold transition-all duration-800'
-                    onClick={(e) => e.preventDefault()}
+                  <p onClick={(e) => e.preventDefault()}>Categories</p>
+                </Dropdown> */}
+                <li
+                  className={`relative group md:ml-3 text-xl md:my-0 py-4 transition-all duration-500 ease-in`}
+                >
+                  <Dropdown
+                    menu={{
+                      items,
+                    }}
                   >
-                    Categories
-                  </p>
-                </Dropdown>
-
+                    <p onClick={(e) => e.preventDefault()}>Categories</p>
+                  </Dropdown>
+                </li>
                 <li
                   className={`relative group md:ml-3 text-xl md:my-0 py-4 transition-all duration-500 ease-in`}
                 >
@@ -183,19 +186,23 @@ const App = () => {
                     BLOGS
                   </Link>
                 </li>
-                <Button>
-                  <Link
-                    href='/build-pc'
-                    style={{
-                      color: "white",
-                      padding: "5px 10px",
-                      borderRadius: "3px",
-                    }}
-                  >
-                    Build PC
-                  </Link>
-                </Button>
-
+                <li
+                  onClick={() => setOpen(!open)}
+                  className='md:ml-3 md:my-0  py-4 transition-all duration-500 ease-in '
+                >
+                  <Button>
+                    <Link
+                      href='/build-pc'
+                      style={{
+                        color: "white",
+                        padding: "5px 10px",
+                        borderRadius: "3px",
+                      }}
+                    >
+                      Build PC
+                    </Link>
+                  </Button>
+                </li>
                 <li
                   onClick={() => setOpen(!open)}
                   className='md:ml-3 md:my-0  py-4 transition-all duration-500 ease-in '
