@@ -24,7 +24,16 @@ const Banner = () => {
 
   return (
     <div>
-      <Carousel {...settings}>
+      <div style={contentStyle}>
+        <Image
+          className='w-full'
+          alt='aa'
+          // width={"500"}
+          height={500}
+          src={img2}
+        />
+      </div>
+      {/* <Carousel {...settings}>
         <div>
           <div style={contentStyle}>
             <Image
@@ -41,7 +50,7 @@ const Banner = () => {
             <Image alt='aa' width={"1200"} height={500} src={img3} />
           </div>
         </div>
-      </Carousel>
+      </Carousel> */}
       {/* <Image src={banner} height={500} width={'100%'} alt="" /> */}
     </div>
   );

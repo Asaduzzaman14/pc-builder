@@ -4,6 +4,7 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 import { useState } from "react";
+import { BsFillMenuAppFill } from "react-icons/bs";
 
 const items = [
   {
@@ -106,67 +107,118 @@ const items = [
 ];
 
 const App = () => {
+  let [open, setOpen] = useState(false);
+  const [show, setShow] = useState(true);
   const { data: session } = useSession();
-  const [show, setShow] = useState(false);
-
-  console.log(session?.user?.name);
-  {
-    /* {session.user && <h2 style={{ textAlign: "center", marginTop: "2%" }}>Logdin User: {session?.user?.name}</h2>} */
-  }
+  //   const [show, setShow] = useState(true);
+  //   console.log(show);
+  //   // console.log(session?.user?.name);
+  //   {
+  //     /* {session.user && <h2 style={{ textAlign: "center", marginTop: "2%" }}>Logdin User: {session?.user?.name}</h2>} */
+  //   }
 
   return (
-    <Layout className='layout'>
-      <Header className='flex justify-between'>
-        <div className='bg-transparent  text-white  justify-between'>
-          <Link className='font-bold text-2xl text-white' href='/'>
-            Build PC
-          </Link>
-          {/* <span onClick={() => setShow(!show)} className="ms-20 cursor-pointer">icon</span> */}
-        </div>
-        <Menu
-          theme='dark'
-          className={`${styles.menu_items} inline-flex items-center gap-3 font-semibold `}
-        >
-          <Dropdown
-            menu={{
-              items,
-            }}
-          >
-            <a onClick={(e) => e.preventDefault()}>
-              <Space>Categories</Space>
-            </a>
-          </Dropdown>
+    <>
+      <div className=' shadow-md z-50 w-full  relative top-0 left-0'>
+        {/* <div className=' md:flex justify-between items-center bg-gray-900 text-white'> */}
+        <div className=' md:flex justify-between lg:px-10 items-center bg-gray-900 text-white'>
+          <div className='relative lg:flex-basis-1/4 lg:py-2 '>
+            <Link href='/' class=''>
+              <h2 className='text-2xl font-bold py-4 ml-5 lg:ml-8 text-primary'>
+                PC builder
+              </h2>
+            </Link>
+          </div>
 
-          <Link href='/about'>
-            <items>About Us</items>
-          </Link>
-          <Link href='/contact'>
-            <items className=''>Contact Us</items>
-          </Link>
-          <Button>
-            <Link
-              href='/build-pc'
-              style={{
-                color: "white",
-                padding: "5px 10px",
-                borderRadius: "3px",
-              }}
+          {/* mobile icon  */}
+          <div
+            onClick={() => setOpen(!open)}
+            className='text-3xl absolute right-8 top-4 cursor-pointer lg:hidden'
+          >
+            <ion-icon name={open ? "close" : "menu"}>ICON </ion-icon>
+          </div>
+
+          {/* <div className=' px-0 basis-3/4 w-[700px] '> */}
+          <div className=' px-0 '>
+            {/* <ul className={`  lg:flex  justify-between lg:pr-5 lg:items-center lg:py-0  lg:pb-0 pb-8 absolute lg:static bg-white lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9 lg:gap-30 transition-all duration-500 ease-in ${open ? 'top-[100px]' : 'top-[-480px]'}`}> */}
+            <ul
+              className={`  lg:flex  justify-between lg:pr-5 lg:items-end lg:py-0  lg:pb-0 pb-8 absolute lg:static bg-gray-900 lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0  transition-all duration-500 ease-in ${
+                open ? "top-[60px]" : "top-[-480px]"
+              }`}
             >
-              Build PC
-            </Link>
-          </Button>
-          {session?.user ? (
-            <Button onClick={() => signOut()} type='primary' danger>
-              Logout
-            </Button>
-          ) : (
-            <Link href='/login'>
-              <items className=''>Login</items>
-            </Link>
-          )}
-        </Menu>
-      </Header>
-    </Layout>
+              <div className='lg:flex ml-5 lg lg:justify-between'>
+                <Dropdown
+                  menu={{
+                    items,
+                  }}
+                >
+                  <p
+                    className='text-lg text-gray-200 p-2 group-hover:border-b-2 border-b-primary translate-x-0 hover:translate-x-3 underline-offset-[20px] hover:text-red-600 font-semibold transition-all duration-800'
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    Categories
+                  </p>
+                </Dropdown>
+
+                <li
+                  className={`relative group md:ml-3 text-xl md:my-0 py-4 transition-all duration-500 ease-in`}
+                >
+                  <Link
+                    onClick={() => setOpen(!open)}
+                    href='/about'
+                    className='text-lg text-gray-200 p-2 group-hover:border-b-2 border-b-primary translate-x-0 hover:translate-x-3 underline-offset-[20px] hover:text-red-600 font-semibold transition-all duration-800'
+                  >
+                    ABOUT
+                  </Link>
+                </li>
+
+                <li
+                  className={`relative group md:ml-3 text-xl md:my-0 py-4 transition-all duration-500 ease-in`}
+                >
+                  <Link
+                    onClick={() => setOpen(!open)}
+                    href='/blogs'
+                    className='text-lg text-gray-200 p-2 group-hover:border-b-2 border-b-primary translate-x-0 hover:translate-x-3 underline-offset-[20px] hover:text-red-600 font-semibold transition-all duration-800'
+                  >
+                    BLOGS
+                  </Link>
+                </li>
+                <Button>
+                  <Link
+                    href='/build-pc'
+                    style={{
+                      color: "white",
+                      padding: "5px 10px",
+                      borderRadius: "3px",
+                    }}
+                  >
+                    Build PC
+                  </Link>
+                </Button>
+
+                <li
+                  onClick={() => setOpen(!open)}
+                  className='md:ml-3 md:my-0  py-4 transition-all duration-500 ease-in '
+                >
+                  {session?.user ? (
+                    <Button onClick={() => signOut()} type='primary' danger>
+                      Logout
+                    </Button>
+                  ) : (
+                    <Link
+                      href='/login'
+                      className='text-lg text-gray-200 p-2 group-hover:border-b-2 border-b-primary translate-x-0 hover:translate-x-3 underline-offset-[20px] hover:text-red-600 font-semibold transition-all duration-800'
+                    >
+                      Login
+                    </Link>
+                  )}
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

@@ -16,7 +16,7 @@ const RootLayout = ({ children }) => {
       >
         {children}
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </SessionProvider>
   );
 };

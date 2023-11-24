@@ -27,12 +27,12 @@ import Swal from "sweetalert2";
 const BuildPc = () => {
   const { data: session } = useSession();
 
-  console.log(session?.user);
+  // console.log(session?.user);
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { products, catagory } = useSelector((state) => state.cart);
 
-  console.log(products);
+  // console.log(products);
 
   const myData = {
     email: session?.user.email,
@@ -40,19 +40,10 @@ const BuildPc = () => {
   };
 
   const buildPc = async () => {
-    console.log(myData);
-    Swal.fire({
-      title: "Build success",
-      // text: "You clicked the button!",
-      icon: "success",
-    });
-    return;
-
-    // alert("pc build successful");
     try {
       const response = await fetch(
-        "http://localhost:5000/api/v1/pc-build",
-        // "https://pc-builder-gules-psi.vercel.app/api/v1/pc-build",
+        // "http://localhost:5000/api/v1/pc-build",
+        "https://pc-builder-gules-psi.vercel.app/api/v1/pc-build",
         {
           method: "POST",
           headers: {
