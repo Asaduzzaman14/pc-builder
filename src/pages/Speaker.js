@@ -3,17 +3,17 @@ import CatagoryProduct from "@/components/Ui/catagoryProduct";
 import React from "react";
 
 const Speaker = ({ products }) => {
-  // console.log(products.data);
+  console.log(products.data);
 
-  const speaker = products?.data?.filter(
-    (product) => product?.Category == "Speaker"
-  );
+  // const speaker = products?.data?.filter(
+  //   (product) => product?.Category == "Speaker"
+  // );
   // console.log(speaker);
   return (
     <div>
-      <h2 className='py-3'>Speaker</h2>
+      <h2 className='py-3'>Speaker sss</h2>
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
-        {speaker?.map((parts) => {
+        {products?.data?.map((parts) => {
           return <CatagoryProduct key={parts?._id} product={parts} />;
         })}
       </div>
@@ -36,15 +36,13 @@ Speaker.getLayout = function getLayout(page) {
 
 export const getStaticProps = async () => {
   const result = await fetch(
-    "https://pc-builder-gules-psi.vercel.app/api/v1/pc-parts"
+    "https://pc-builder-gules-psi.vercel.app/api/v1/pc-parts?Category=Speaker"
   );
-  // console.log(result);
+  console.log(result);
   const data = await result.json();
 
   return {
-    props: {
-      products: data,
-    },
+    props: { products: data?.data },
     revalidate: 30,
   };
 };

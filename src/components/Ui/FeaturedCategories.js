@@ -6,7 +6,7 @@ const FeaturedCategories = () => {
     <div className='pt-8'>
       <h2>Featured Categories</h2>
 
-      <div className='grid grid-cols-4 gap-5 mt-10'>
+      <div className='grid grid-cols-2 lg:grid-cols-4 gap-5 mt-10'>
         <div>
           <Link href='/build/Speaker?query=Speaker'>
             <h3 className='border-2 p-4 rounded-md text-center'>Speaker</h3>
@@ -20,79 +20,79 @@ const FeaturedCategories = () => {
         </div>
 
         <div>
-          <Link href='/Cpu'>
+          <Link href='/build/cpu?query=CPU'>
             <h3 className='border-2 p-4 rounded-md text-center'>CPU</h3>
           </Link>
         </div>
 
         <div>
-          <Link href='/Gpu'>
+          <Link href='/build/gpu?query=GPU'>
             <h3 className='border-2 p-4 rounded-md text-center'>GPU</h3>
           </Link>
         </div>
 
         <div>
-          <Link href='/Keyboard'>
+          <Link href='/build/Keyboard?query=Keyboard'>
             <h3 className='border-2 p-4 rounded-md text-center'>Keyboard</h3>
           </Link>
         </div>
         <div>
-          <Link href='/Mouse'>
+          <Link href='/build/Mouse?query=Mouse'>
             <h3 className='border-2 p-4 rounded-md text-center'>Mouse </h3>
           </Link>
         </div>
         <div>
-          <Link href='/Psu'>
+          <Link href='/build/PSU?query=PSU'>
             <h3 className='border-2 p-4 rounded-md text-center'>PSU </h3>
           </Link>
         </div>
 
         <div>
-          <Link href='/Ram'>
+          <Link href='/build/ram?query=RAM'>
             <h3 className='border-2 p-4 rounded-md text-center'>RAM </h3>
           </Link>
         </div>
-        <div>
+        {/* <div>
           <Link href='/Rom'>
             <h3 className='border-2 p-4 rounded-md text-center'>ROM</h3>
           </Link>
-        </div>
+        </div> */}
 
         <div>
-          <Link href='/Ssd'>
+          <Link href='/build/SSD?query=SSD'>
             <h3 className='border-2 p-4 rounded-md text-center'>SSD</h3>
           </Link>
         </div>
-        <div>
+        {/* <div>
           <Link href='/Ups'>
             <h3 className='border-2 p-4 rounded-md text-center'>UPS</h3>
           </Link>
-        </div>
+        </div> */}
 
         <div>
-          <Link href='/CpuCooler'>
+          <Link href='/build/cpu-cooler?query=Cpu-Cooler'>
             <h3 className='border-2 p-4 rounded-md text-center'>Cpu Cooler</h3>
           </Link>
         </div>
 
-        <div>
-          <Link href='/processor'>
+        {/* <div>
+          <Link href='/build/Speaker?query=Speaker'>
             <h3 className='border-2 p-4 rounded-md text-center'>Processor </h3>
           </Link>
-        </div>
+        </div> */}
         <div>
-          <Link href='/motherboard'>
+          <Link href='/build/MotherBoard?query=MotherBoard'>
             <h3 className='border-2 p-4 rounded-md text-center'>
               Motherboard{" "}
             </h3>
           </Link>
         </div>
 
-        <div>
+        {/* <div>
           <Link href='/monitor'>
             <h3 className='border-2 p-4 rounded-md text-center'>Monitor </h3>
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );
