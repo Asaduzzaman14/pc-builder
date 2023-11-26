@@ -3,14 +3,16 @@ import { GoogleOutlined, GithubOutlined } from "@ant-design/icons";
 import Head from "next/head";
 import styles from "@/styles/Login.module.css";
 
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import RootLayout from "@/components/Layoutes/RootLayout";
 import Swal from "sweetalert2";
 // import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 // import { auth } from "@/firebase/firebase.auth";
 // import { useForm } from "react-hook-form"
 
-const login = () => {
+const Login = () => {
+  const { data: session } = useSession();
+
   // const { register, handleSubmit, } = useForm()
   // const [createUserWithEmailAndPassword, user, loadingerror,] =
   //     useCreateUserWithEmailAndPassword(auth);
@@ -27,11 +29,18 @@ const login = () => {
     signIn("github", {
       callbackUrl: "http://localhost:3000/",
     });
+  };
+  const googlelogin = () => {
+    signIn("google", {
+      callbackUrl: "http://localhost:3000/",
+    });
+  };
+  if (session?.user?.email) {
     Swal.fire({
       title: "Successfully login",
       icon: "success",
     });
-  };
+  }
 
   return (
     <div>
@@ -41,7 +50,7 @@ const login = () => {
       <div className={styles.form}>
         <h3>LOGIN</h3>
         <div className={styles.social_icons}>
-          {/* <GoogleOutlined /> */}
+          <GoogleOutlined onClick={() => googlelogin()} />
           <GithubOutlined onClick={() => login()} />
         </div>
         <hr />
@@ -63,8 +72,8 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
 
-login.getLayout = function getLayout(page) {
+Login.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };

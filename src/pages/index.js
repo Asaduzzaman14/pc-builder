@@ -10,7 +10,7 @@ import { useState } from "react";
 import OurClient from "@/components/Ui/OurClient";
 
 export default function Home({ products }) {
-  console.log(products);
+  // console.log(products);
 
   return (
     <>
