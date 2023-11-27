@@ -6,6 +6,8 @@ import { useSession, signOut } from "next-auth/react";
 import { useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
+import { auth } from "@/firebase/firebase.auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const items = [
   {
@@ -117,6 +119,25 @@ const App = () => {
   //     /* {session.user && <h2 style={{ textAlign: "center", marginTop: "2%" }}>Logdin User: {session?.user?.name}</h2>} */
   //   }
 
+  const [user, loadign, err] = useAuthState(auth);
+  console.log(user);
+
+  const signOutUser = () => {
+    if (user?.email) {
+      auth
+        .signOut()
+        .then(() => {
+          // Sign-out successful.
+          console.log("User signed out");
+        })
+        .catch((error) => {
+          // An error happened.
+          console.error("Error signing out:", error.message);
+        });
+    } else {
+      signOut();
+    }
+  };
   return (
     <>
       <div className=' shadow-md z-50 w-full  relative top-0 left-0'>
@@ -220,8 +241,8 @@ const App = () => {
                   onClick={() => setOpen(!open)}
                   className='md:ml-3 md:my-0  py-4 transition-all duration-500 ease-in '
                 >
-                  {session?.user ? (
-                    <Button onClick={() => signOut()} type='primary' danger>
+                  {session?.user || user?.email ? (
+                    <Button onClick={() => signOutUser()} type='primary' danger>
                       Logout
                     </Button>
                   ) : (

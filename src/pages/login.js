@@ -6,25 +6,28 @@ import styles from "@/styles/Login.module.css";
 import { signIn, useSession } from "next-auth/react";
 import RootLayout from "@/components/Layoutes/RootLayout";
 import Swal from "sweetalert2";
-// import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-// import { auth } from "@/firebase/firebase.auth";
-// import { useForm } from "react-hook-form"
+import {
+  useAuthState,
+  useCreateUserWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
+import { auth } from "@/firebase/firebase.auth";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
   const { data: session } = useSession();
+  const [user, loadign, err] = useAuthState(auth);
+  console.log(user);
 
-  // const { register, handleSubmit, } = useForm()
-  // const [createUserWithEmailAndPassword, user, loadingerror,] =
-  //     useCreateUserWithEmailAndPassword(auth);
+  const { register, handleSubmit } = useForm();
+  const [createUserWithEmailAndPassword, loadingerror] =
+    useCreateUserWithEmailAndPassword(auth);
 
-  // const onSubmit = (data) => {
-  //   console.log(data)
-  //   createUserWithEmailAndPassword(data.email, data.password)
+  const onSubmit = (data) => {
+    console.log(data);
+    createUserWithEmailAndPassword(data.email, data.password);
+  };
 
-  // }
-
-  // console.log(user);
-
+  console.log(user);
   const login = () => {
     signIn("github", {
       callbackUrl: "http://localhost:3000/",
@@ -45,27 +48,28 @@ const Login = () => {
   return (
     <div>
       <Head>
-        <title>Next Login</title>
+        <title>pc builder Login</title>
       </Head>
       <div className={styles.form}>
         <h3>LOGIN</h3>
         <div className={styles.social_icons}>
+          {/* icons github  */}
           <GoogleOutlined onClick={() => googlelogin()} />
+          {/* icons google  */}
           <GithubOutlined onClick={() => login()} />
         </div>
         <hr />
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)} className='text-gray-800'>
           <label htmlFor=''>Your Email</label>
-          <input
-            //  {...register("email", { required: true })}
-            type='email'
-          />
+          <input {...register("email", { required: true })} type='email' />
           <label htmlFor=''>Your Password</label>
           <input
-            // {...register("password", { required: true })}
+            {...register("password", { required: true })}
             type='password'
           />
-          <Button className='text-white pb-4 mb-4'>Login</Button>
+          <button type='submit' className='text-white'>
+            Login
+          </button>
         </form>
       </div>
     </div>
