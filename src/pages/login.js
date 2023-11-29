@@ -9,6 +9,7 @@ import Swal from "sweetalert2";
 import {
   useAuthState,
   useCreateUserWithEmailAndPassword,
+  useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { auth } from "@/firebase/firebase.auth";
 import { useForm } from "react-hook-form";
@@ -17,15 +18,15 @@ import Link from "next/link";
 const Login = () => {
   const { data: session } = useSession();
   const [user, loadign, err] = useAuthState(auth);
-  console.log(user);
+  // console.log(user);
 
   const { register, handleSubmit } = useForm();
-  const [createUserWithEmailAndPassword, loadingerror] =
-    useCreateUserWithEmailAndPassword(auth);
 
+  const [signInWithEmailAndPassword, loading, error] =
+    useSignInWithEmailAndPassword(auth);
   const onSubmit = (data) => {
-    console.log(data);
-    createUserWithEmailAndPassword(data.email, data.password);
+    // console.log(data);
+    signInWithEmailAndPassword(data.email, data.password);
   };
 
   console.log(user);
