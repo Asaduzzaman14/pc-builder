@@ -14,7 +14,7 @@ import { auth } from "@/firebase/firebase.auth";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 
-const Login = () => {
+const SignIn = () => {
   const { data: session } = useSession();
   const [user, loadign, err] = useAuthState(auth);
   console.log(user);
@@ -29,19 +29,19 @@ const Login = () => {
   };
 
   console.log(user);
-  const login = () => {
+  const SignIn = () => {
     signIn("github", {
       callbackUrl: "http://localhost:3000/",
     });
   };
-  const googlelogin = () => {
+  const googleSignIn = () => {
     signIn("google", {
       callbackUrl: "http://localhost:3000/",
     });
   };
   if (session?.user?.email) {
     Swal.fire({
-      title: "Successfully login",
+      title: "Successfully SignIn",
       icon: "success",
     });
   }
@@ -49,25 +49,21 @@ const Login = () => {
   return (
     <div>
       <Head>
-        <title>pc builder Login</title>
+        <title>pc builder SignIn</title>
       </Head>
       <div className={styles.form}>
-        <h3 className='font-bold text-2xl'>LOGIN</h3>
+        <h3 className='font-bold text-2xl'>Register</h3>
         <div className={`${styles.social_icons} felx  justify-center`}>
           {/* icons github  */}
-          <GoogleOutlined onClick={() => googlelogin()} />
+          <GoogleOutlined onClick={() => googleSignIn()} />
           {/* icons google  */}
-          <GithubOutlined onClick={() => login()} />
+          <GithubOutlined onClick={() => SignIn()} />
         </div>
         <hr />
         <form onSubmit={handleSubmit(onSubmit)} className=''>
-          <label className='' htmlFor=''>
-            Your Email
-          </label>
+          <label htmlFor=''>Your Email</label>
           <input {...register("email", { required: true })} type='email' />
-          <label className='' htmlFor=''>
-            Your Password
-          </label>
+          <label htmlFor=''>Your Password</label>
           <input
             {...register("password", { required: true })}
             type='password'
@@ -77,12 +73,10 @@ const Login = () => {
               type='submit'
               className='border border-gray-300 m-0 rounded-md py-1'
             >
-              Login
+              Create
             </button>
 
-            <Link href='/signIn' className='underline underline-offset-4'>
-              Register
-            </Link>
+            <Link href='/login'>Have an account</Link>
           </div>
         </form>
       </div>
@@ -90,8 +84,8 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignIn;
 
-Login.getLayout = function getLayout(page) {
+SignIn.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };

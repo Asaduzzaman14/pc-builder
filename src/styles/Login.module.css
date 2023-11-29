@@ -6,7 +6,7 @@
   margin: 8% auto;
   padding: 20px;
   text-align: center;
-  color: white;
+  color: white !important;
 }
 
 .form form {
@@ -22,15 +22,24 @@
 }
 
 .form button {
-  width: 50%;
-  margin-top: 20px;
+  width: 40%;
+  /* margin-top: 20px; */
 }
 
 .social_icons {
-  width: 30%;
+  /* width: 30%; */
   font-size: 40px;
   margin: 10px auto;
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  /* justify-content: space-between; */
+}
 
-  /* display: flex;
-  justify-content: space-between; */
+.form button:hover {
+  border: 2px solid white !important;
+}
+.form label {
+  font-weight: 500;
+  display: flex;
 }
