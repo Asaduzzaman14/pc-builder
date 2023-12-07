@@ -14,8 +14,12 @@ import {
 import { auth } from "@/firebase/firebase.auth";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Login = () => {
+  const router = useRouter();
+
   const { data: session } = useSession();
   const [user, loadign, err] = useAuthState(auth);
   // console.log(user);
@@ -46,6 +50,11 @@ const Login = () => {
       icon: "success",
     });
   }
+  useEffect(() => {
+    if (user || session) {
+      router.push("/");
+    }
+  }, [user, session, router]);
 
   return (
     <div>

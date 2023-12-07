@@ -8,6 +8,7 @@ import { CiMenuBurger } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import { auth } from "@/firebase/firebase.auth";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { BsArrowDown } from "react-icons/bs";
 
 const items = [
   {
@@ -182,8 +183,12 @@ const App = () => {
                     menu={{
                       items,
                     }}
+                    className='flex'
                   >
-                    <p onClick={(e) => e.preventDefault()}>Categories</p>
+                    <div className='flex items-center gap-1'>
+                      <p onClick={(e) => e.preventDefault()}>Categories</p>
+                      <BsArrowDown className='text-sm mt-1' />
+                    </div>
                   </Dropdown>
                 </li>
                 <li
