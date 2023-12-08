@@ -13,7 +13,7 @@ import { BsArrowDown } from "react-icons/bs";
 const items = [
   {
     label: (
-      <Link rel='noopener ' href='/category/casing'>
+      <Link rel='noopener ' className='font-medium' href='/category/casing'>
         Casing
       </Link>
     ),
@@ -21,7 +21,7 @@ const items = [
   },
   {
     label: (
-      <Link rel='noopener ' href='/category/cpu-cooler'>
+      <Link rel='noopener' className='font-medium' href='/category/cpu-cooler'>
         Cpu Cooler
       </Link>
     ),
@@ -29,7 +29,7 @@ const items = [
   },
   {
     label: (
-      <Link rel='noopener ' href='/category/cpu'>
+      <Link rel='noopener' className='font-medium' href='/category/cpu'>
         Cpu
       </Link>
     ),
@@ -37,7 +37,7 @@ const items = [
   },
   {
     label: (
-      <Link rel='noopener ' href='/category/gpu'>
+      <Link rel='noopener' className='font-medium' href='/category/gpu'>
         GPU
       </Link>
     ),
@@ -45,7 +45,7 @@ const items = [
   },
   {
     label: (
-      <Link rel='' href='/category/keyboard'>
+      <Link rel='' className='font-medium' href='/category/keyboard'>
         Keyboard
       </Link>
     ),
@@ -53,7 +53,7 @@ const items = [
   },
   {
     label: (
-      <Link rel='' href='/category/motherboard'>
+      <Link rel='' className='font-medium' href='/category/motherboard'>
         Motherboard
       </Link>
     ),
@@ -61,7 +61,7 @@ const items = [
   },
   {
     label: (
-      <Link rel='' href='/category/mouse'>
+      <Link rel='' className='font-medium' href='/category/mouse'>
         Mouse
       </Link>
     ),
@@ -69,7 +69,7 @@ const items = [
   },
   {
     label: (
-      <Link rel='' href='/category/speaker'>
+      <Link rel='' className='font-medium' href='/category/speaker'>
         Speaker
       </Link>
     ),
@@ -77,7 +77,7 @@ const items = [
   },
   {
     label: (
-      <Link rel='' href='/category/monitor'>
+      <Link rel='' className='font-medium' href='/category/monitor'>
         Monitor
       </Link>
     ),
@@ -85,7 +85,7 @@ const items = [
   },
   {
     label: (
-      <Link rel='' href='/category/psu'>
+      <Link rel='' className='font-medium' href='/category/psu'>
         PSU
       </Link>
     ),
@@ -94,7 +94,7 @@ const items = [
 
   {
     label: (
-      <Link rel='' href='/category/ram'>
+      <Link rel='' className='font-medium' href='/category/ram'>
         RAM
       </Link>
     ),
@@ -102,7 +102,7 @@ const items = [
   },
   {
     label: (
-      <Link rel='' href='/category/ssd'>
+      <Link rel='' className='font-medium' href='/category/ssd'>
         SSD
       </Link>
     ),
@@ -113,15 +113,8 @@ const items = [
 const App = () => {
   let [open, setOpen] = useState(false);
   const { data: session } = useSession();
-  //   const [show, setShow] = useState(true);
-  //   console.log(show);
-  //   // console.log(session?.user?.name);
-  //   {
-  //     /* {session.user && <h2 style={{ textAlign: "center", marginTop: "2%" }}>Logdin User: {session?.user?.name}</h2>} */
-  //   }
 
   const [user, loadign, err] = useAuthState(auth);
-  console.log(user);
 
   const signOutUser = () => {
     if (user?.email) {
@@ -169,13 +162,6 @@ const App = () => {
               }`}
             >
               <div className='lg:flex ml-5 lg lg:justify-between'>
-                {/* <Dropdown
-                  menu={{
-                    items,
-                  }}
-                >
-                  <p onClick={(e) => e.preventDefault()}>Categories</p>
-                </Dropdown> */}
                 <li
                   className={`relative px-2 group md:ml-3 text-xl md:my-0 py-4 transition-all duration-500 ease-in`}
                 >
@@ -183,9 +169,9 @@ const App = () => {
                     menu={{
                       items,
                     }}
-                    className='flex'
+                    className='flex w-32'
                   >
-                    <div className='flex items-center gap-1'>
+                    <div className='flex items-center font-medium gap-1'>
                       <p onClick={(e) => e.preventDefault()}>Categories</p>
                       <BsArrowDown className='text-sm mt-1' />
                     </div>
@@ -197,7 +183,7 @@ const App = () => {
                   <Link
                     onClick={() => setOpen(!open)}
                     href='/about'
-                    className='text-lg text-gray-200 p-2 group-hover:border-b-2 border-b-primary translate-x-0 hover:translate-x-3 underline-offset-[20px] hover:text-red-600 font-semibold transition-all duration-800'
+                    className='text-lg text-gray-200 p-2 delay-300 translate-x-0 hover:translate-x-3  hover:text-sky-500 font-semibold transition-all duration-800'
                   >
                     ABOUT
                   </Link>
@@ -209,7 +195,7 @@ const App = () => {
                   <Link
                     onClick={() => setOpen(!open)}
                     href='/blogs'
-                    className='text-lg text-gray-200 p-2 group-hover:border-b-2 border-b-primary translate-x-0 hover:translate-x-3 underline-offset-[20px] hover:text-red-600 font-semibold transition-all duration-800'
+                    className='text-lg text-gray-200 p-2 delay-300 translate-x-0 hover:translate-x-3 underline-offset-[20px] hover:text-sky-500 font-semibold transition-all duration-800'
                   >
                     BLOGS
                   </Link>
@@ -220,7 +206,7 @@ const App = () => {
                   <Link
                     onClick={() => setOpen(!open)}
                     href='/my-pc'
-                    className='text-lg text-gray-200 p-2 group-hover:border-b-2 border-b-primary translate-x-0 hover:translate-x-3 underline-offset-[20px] hover:text-red-600 font-semibold transition-all duration-800'
+                    className='text-lg text-gray-200 p-2 delay-300 translate-x-0 hover:translate-x-3 underline-offset-[20px] hover:text-sky-500 font-semibold transition-all duration-800'
                   >
                     MY PC
                   </Link>
@@ -253,7 +239,7 @@ const App = () => {
                   ) : (
                     <Link
                       href='/login'
-                      className='text-lg text-gray-200 p-2 group-hover:border-b-2 border-b-primary translate-x-0 hover:translate-x-3 underline-offset-[20px] hover:text-red-600 font-semibold transition-all duration-800'
+                      className='text-lg text-gray-200 p-2 delay-300 translate-x-0 hover:translate-x-3 underline-offset-[20px] hover:text-sky-500 font-semibold transition-all duration-800'
                     >
                       Login
                     </Link>
