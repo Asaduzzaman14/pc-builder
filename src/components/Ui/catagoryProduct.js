@@ -24,26 +24,39 @@ const CatagoryProduct = ({ product }) => {
       {/* {products?.map((product) => ( */}
       <Card
         key={product?._id}
-        className='p-0 border-0 hover:border bg-slate-900'
+        className='p-0 border-0 w-fit hover:border bg-slate-900'
         style={{
-          width: 550,
+          // width: 550,
           border: "1px  solid #fff",
           padding: "0px",
           margin: "0",
         }}
       >
-        <div className='flex lg:flex justify-between gap-5 items-center'>
-          <Image alt='aa' width={300} height={"100%"} src={product?.img1} />
+        <div className='p-0 justify-between gap-5 items-center'>
+          <Image
+            className='rounded-lg'
+            alt='aa'
+            width={200}
+            height={"100%"}
+            src={product?.img1}
+          />
 
           <div>
-            <div className='text-base  text-gray-300'>
-              <p>Category: {product?.Category}</p>
-              <p>Brand: {product?.Brand}</p>
-              <p>Price: {product?.Price}</p>
-              <p>Status: {product?.Status}</p>
+            <div className='text-base p-0  text-gray-300'>
+              <p className='text-xs lg:text-sm'>
+                Category: {product?.Category}
+              </p>
+              <p className='text-xs lg:text-sm'>Brand: {product?.Brand}</p>
+              <p className='text-xs lg:text-sm'>Price: {product?.Price}</p>
+              <p className='text-xs lg:text-sm'>Status: {product?.Status}</p>
               <div className='flex gap-x-1'>
-                <p className='inline-block'>Rating:</p>
-                <Rate allowHalf disabled defaultValue={product?.AvgRatings} />
+                <p className='inline-block text-xs lg:text-sm'>Rating:</p>
+                <Rate
+                  className='text-xs lg:text-sm'
+                  allowHalf
+                  disabled
+                  defaultValue={product?.AvgRatings}
+                />
               </div>
             </div>
 

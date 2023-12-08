@@ -7,6 +7,8 @@ Tailwind
 Next js (Page Route)
 Next Auth
 
+Backend:
+Typescrypt
 Node.js
 Express.js
 MongoDb

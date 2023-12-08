@@ -6,7 +6,7 @@ const CpuCooler = ({ products }) => {
   return (
     <div>
       <h2>cpuCooler</h2>
-      <div className='grid lg:grid-cols-2 gap-2'>
+      <div className='grid lg:grid-cols-2 gap-2 lg:gap-3'>
         {products?.map((part) => {
           return <CatagoryProduct key={part?._id} product={part} />;
         })}

@@ -169,7 +169,7 @@ const App = () => {
                     menu={{
                       items,
                     }}
-                    className='flex w-32'
+                    className='w-32'
                   >
                     <div className='flex items-center font-medium gap-1'>
                       <p onClick={(e) => e.preventDefault()}>Categories</p>
