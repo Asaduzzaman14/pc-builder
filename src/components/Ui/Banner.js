@@ -2,7 +2,7 @@ import React from "react";
 import img1 from "@/assets/pc-banner-1.jpg";
 import img2 from "../../assets/pc-banner-2.jpg";
 import img3 from "../../assets/pc-banner-3.jpg";
-import img5 from "@/assets/img-2.jpg";
+import img4 from "@/assets/pc-builder.jpg";
 import Image from "next/image";
 import { Carousel } from "antd";
 
@@ -11,9 +11,9 @@ const Banner = () => {
     maxHeight: "100vh",
   };
   const settings = {
-    className: "mt-2 lg:mt-4 text-white text-left",
+    className: " text-white text-left",
     autoplay: true,
-    dots: false,
+    // dots: false,
     speed: 800,
   };
 
@@ -28,6 +28,18 @@ const Banner = () => {
               width={350}
               height={200}
               layout='responsive'
+              className='h-screen'
+            />
+          </div>
+        </div>
+        <div>
+          <div>
+            <Image
+              src={img2}
+              alt='Your Image Alt Text'
+              width={350}
+              height={200}
+              layout='responsive'
               className='max-h-screen'
             />
           </div>
@@ -36,6 +48,18 @@ const Banner = () => {
           <div>
             <Image
               src={img3}
+              alt='Your Image Alt Text'
+              width={350}
+              height={200}
+              layout='responsive'
+              className='max-h-screen'
+            />
+          </div>
+        </div>
+        <div>
+          <div>
+            <Image
+              src={img4}
               alt='Your Image Alt Text'
               width={350}
               height={200}

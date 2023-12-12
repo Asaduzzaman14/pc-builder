@@ -10,7 +10,7 @@ const RootLayout = ({ children }) => {
       <App />
       <div
         style={{
-          padding: "20px",
+          // padding: "20px",
           minHeight: "100vh",
         }}
       >

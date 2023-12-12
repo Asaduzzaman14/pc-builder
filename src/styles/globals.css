@@ -52,13 +52,27 @@ p {
 .slick-slide div {
   display: flex;
   flex-direction: column;
-  margin: 5px auto;
 }
 .ant-card-body {
-  padding: 10px !important;
+  padding: 0 10px !important;
   border-radius: 20px !important;
 }
 
 .ant-card {
   border-radius: 12px;
+}
+
+.slick-slide img {
+  height: 500px !important;
+}
+
+@media (max-width: 767px) {
+  h2 {
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .slick-slide img {
+    height: 300px !important;
+  }
 }
