@@ -66,9 +66,9 @@ const BuildPc = () => {
 
   return (
     <div>
-      <h2>BUILD YOUR PC</h2>
+      <h2 className='pt-4'>BUILD YOUR PC</h2>
       <div className=''>
-        <div className='grid gap-5 mt-10'>
+        <div className='grid gap-5 mt-10 px-4 lg:px-8'>
           {/* Casing */}
           <div className='border-2 rounded-lg '>
             <div className='flex justify-between items-center px-2'>

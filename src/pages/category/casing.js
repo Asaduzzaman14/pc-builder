@@ -7,7 +7,7 @@ const Casing = ({ products }) => {
     <div>
       <h2>Casing</h2>
       <div>
-        <div className='grid lg:grid-cols-2 gap-2'>
+        <div className='grid lg:grid-cols-2 py-5 gap-3 lg:gap-5'>
           {products?.map((part) => {
             return <CatagoryProduct key={part?._id} product={part} />;
           })}

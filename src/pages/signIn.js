@@ -39,7 +39,7 @@ const SignIn = () => {
       callbackUrl: "http://localhost:3000/",
     });
   };
-  if (session?.user?.email) {
+  if (session?.user?.email || user) {
     Swal.fire({
       title: "Successfully SignIn",
       icon: "success",

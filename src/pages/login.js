@@ -36,12 +36,12 @@ const Login = () => {
   console.log(user);
   const login = () => {
     signIn("github", {
-      callbackUrl: "http://localhost:3000/",
+      callbackUrl: "https://pc-parts-client.vercel.app/",
     });
   };
   const googlelogin = () => {
     signIn("google", {
-      callbackUrl: "http://localhost:3000/",
+      callbackUrl: "https://pc-parts-client.vercel.app/",
     });
   };
   if (session?.user?.email) {

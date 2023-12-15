@@ -10,8 +10,9 @@ const MyPc = () => {
   const { data: session } = useSession();
   const [user, loadign, err] = useAuthState(auth);
   const router = useRouter();
-
-  if (!session || !user) {
+  console.log(session);
+  console.log(user);
+  if (!session && !user) {
     router.push("/login");
     // redirect("/blogs");
     // redirect("/blogs");

@@ -1,11 +1,18 @@
 import { addToCart } from "@/redux/features/build";
-import { Button, Card, Image, Rate } from "antd";
+import { Button, Card, Carousel, Image, Rate } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+
 import { useDispatch } from "react-redux";
 
 const CatagoryProduct = ({ product }) => {
+  const settings = {
+    className: " text-white text-left bg-color  rounded-md",
+    autoplay: true,
+    dots: false,
+    speed: 1000,
+  };
   const router = useRouter();
   console.log(product, "1111");
   const dispatch = useDispatch();
@@ -20,26 +27,53 @@ const CatagoryProduct = ({ product }) => {
   };
 
   return (
-    <div className='grid justify-items-center '>
+    <div className='grid justify-items-center'>
       {/* {products?.map((product) => ( */}
       <Card
         key={product?._id}
-        className='p-0 border-0 w-fit hover:border bg-slate-900'
+        className='p-0 py-5 border-0 w-fit hover:border bg-slate-900'
         style={{
           // width: 550,
           border: "1px  solid #fff",
-          padding: "0px",
+          padding: "10px 0",
           margin: "0",
         }}
       >
         <div className='p-0 justify-between gap-5 items-center'>
-          <Image
+          <div>
+            <Carousel {...settings} className='w-[200px] pb-3 rounded-md'>
+              <div>
+                <div>
+                  <Image
+                    className=' rounded-sm'
+                    alt='aa'
+                    width={200}
+                    height={"100%"}
+                    src={product?.img1}
+                  />
+                </div>
+              </div>
+              <div>
+                <div>
+                  <Image
+                    className=' rounded-sm'
+                    alt='aa'
+                    width={200}
+                    height={"100%"}
+                    src={product?.img2}
+                  />
+                </div>
+              </div>
+            </Carousel>
+          </div>
+
+          {/* <Image
             className='rounded-lg'
             alt='aa'
             width={200}
             height={"100%"}
             src={product?.img1}
-          />
+          /> */}
 
           <div>
             <div className='text-base p-0  text-gray-300'>
