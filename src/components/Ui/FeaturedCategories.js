@@ -6,7 +6,7 @@ const FeaturedCategories = () => {
     <div className='pt-8 px-10'>
       <h2>Featured Categories</h2>
 
-      <div className='grid grid-cols-2 lg:grid-cols-4 sm:gap-x-5 gap-6 mt-10'>
+      <div className='grid grid-cols-1 lg:grid-cols-4 sm:gap-x-5 gap-6 mt-10'>
         <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-slate-500'>
           <Link href='/build/Speaker?query=Speaker'>
             <h3 className='border hover:border-sky-600 p-4 rounded-md text-center font-medium'>

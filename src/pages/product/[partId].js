@@ -9,13 +9,13 @@ const ProductDetails = ({ product }) => {
   // console.log("product", product);
   return (
     <div>
-      <h2>This is product details: {product?.catagory} </h2>
-      <div className='flex justify-center mt-10'>
+      <h2 className='pt-2'>This is product details: {product?.Category} </h2>
+      <div className='flex justify-center mt-7'>
         <div
           key={product._id}
-          className='grid lg:grid-cols-2 justify-items-start lg:justify-items-center gap-2 lg:gap-5 p-3  bg-slate-900'
+          className='grid lg:grid-cols-2 justify-items-start lg:justify-items-center gap-2 lg:gap-5 p-3'
         >
-          <div>
+          <div className='mx-auto'>
             <Image alt='image' width={500} height={500} src={product?.img1} />
             {/* <Image alt='aa' width={500} height={500} src={product?.img2} /> */}
           </div>

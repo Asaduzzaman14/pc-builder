@@ -11,14 +11,14 @@ const Banner = () => {
     maxHeight: "100vh",
   };
   const settings = {
-    className: " text-white text-left",
+    className: " text-white text-left bg-color",
     autoplay: true,
     // dots: false,
     speed: 800,
   };
 
   return (
-    <div>
+    <div className='bg-[#000] banner'>
       <Carousel {...settings} style={contentStyle}>
         <div style={contentStyle}>
           <div>
