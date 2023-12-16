@@ -12,8 +12,9 @@ const MyPc = ({ products }) => {
   const { data: session } = useSession();
   const [user, loadign, err] = useAuthState(auth);
   const router = useRouter();
+
   if (!session && !user) {
-    router.push("/login");
+    router?.push("/login");
     // redirect("/blogs");
   }
 
@@ -66,14 +67,34 @@ MyPc.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
-export const getServerSideProps = async () => {
-  const result = await fetch(
-    "https://pc-builder-gules-psi.vercel.app/api/v1/pc-build"
-  );
+export const getServerSideProps = async (context) => {
+  // Access query parameters from the context
+  const { query } = context;
+
+  // Use the query parameters to construct the API URL
+  const apiUrl = `https://pc-builder-gules-psi.vercel.app/api/v1/pc-build?email=${query.param1}`;
+
+  // Fetch data from the dynamic API URL
+  const result = await fetch(apiUrl);
+
+  // Parse the JSON data
   const data = await result?.json();
+
   return {
     props: {
       products: data?.data,
     },
   };
 };
+
+// export const getServerSideProps = async () => {
+//   const result = await fetch(
+//     "https://pc-builder-gules-psi.vercel.app/api/v1/pc-build"
+//   );
+//   const data = await result?.json();
+//   return {
+//     props: {
+//       products: data?.data,
+//     },
+//   };
+// };

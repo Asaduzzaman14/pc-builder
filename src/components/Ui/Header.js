@@ -3,7 +3,7 @@ const { Header } = Layout;
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import { auth } from "@/firebase/firebase.auth";
@@ -112,9 +112,19 @@ const items = [
 
 const App = () => {
   let [open, setOpen] = useState(false);
-  const { data: session } = useSession();
 
+  const { data: session } = useSession();
   const [user, loadign, err] = useAuthState(auth);
+
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    if (user) {
+      setEmail(user?.email);
+    } else {
+      setEmail(session?.user?.email);
+    }
+  }, [user, session]);
 
   const signOutUser = () => {
     if (user?.email) {
@@ -205,7 +215,7 @@ const App = () => {
                 >
                   <Link
                     onClick={() => setOpen(!open)}
-                    href='/my-pc'
+                    href={`/my-pc/:${email}`}
                     className='text-lg text-gray-200 p-2 delay-300 translate-x-0 hover:translate-x-3 underline-offset-[20px] hover:text-sky-500 font-semibold transition-all duration-800'
                   >
                     MY PC

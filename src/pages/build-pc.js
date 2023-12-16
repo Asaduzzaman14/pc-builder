@@ -1,7 +1,7 @@
 import RootLayout from "@/components/Layoutes/RootLayout";
 import { Button, Card, Image } from "antd";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import {
   BsDeviceSsd,
@@ -23,22 +23,28 @@ import { RiZcoolLine } from "react-icons/ri";
 import { CgSmartphoneRam } from "react-icons/cg";
 import { useSession } from "next-auth/react";
 import Swal from "sweetalert2";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "@/firebase/firebase.auth";
 
 const BuildPc = () => {
   const { data: session } = useSession();
-
-  // console.log(session?.user);
-
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [user, loadign, err] = useAuthState(auth);
+  const [email, setEmail] = useState("");
   const { products, catagory } = useSelector((state) => state.cart);
 
-  // console.log(products);
+  useEffect(() => {
+    if (user) {
+      setEmail(user?.email);
+    } else {
+      setEmail(session?.user?.email);
+    }
+  }, [user, session]);
 
   const myData = {
-    email: session?.user.email,
+    email: email,
     products: products,
   };
-
+  // console.log(myData);
   const buildPc = async () => {
     try {
       const response = await fetch(
@@ -53,11 +59,13 @@ const BuildPc = () => {
         }
       );
       const resData = await response?.json();
-      Swal.fire({
-        title: "Build success",
-        // text: "You clicked the button!",
-        icon: "success",
-      });
+      if (resData) {
+        Swal.fire({
+          title: "Build success",
+          // text: "You clicked the button!",
+          icon: "success",
+        });
+      }
       console.log(resData);
     } catch (error) {
       console.error("Error during POST request:", error);

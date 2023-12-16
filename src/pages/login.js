@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "antd";
 import { GoogleOutlined, GithubOutlined } from "@ant-design/icons";
 import Head from "next/head";
@@ -22,7 +24,6 @@ const Login = () => {
 
   const { data: session } = useSession();
   const [user, loadign, err] = useAuthState(auth);
-  // console.log(user);
 
   const { register, handleSubmit } = useForm();
 
@@ -44,7 +45,7 @@ const Login = () => {
       callbackUrl: "https://pc-parts-client.vercel.app/",
     });
   };
-  if (session?.user?.email) {
+  if (session?.user?.email || user) {
     Swal.fire({
       title: "Successfully login",
       icon: "success",
@@ -52,7 +53,8 @@ const Login = () => {
   }
   useEffect(() => {
     if (user || session) {
-      router.push("/");
+      // router.push("/");
+      router.replace("/");
     }
   }, [user, session, router]);
 
