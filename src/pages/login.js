@@ -45,17 +45,19 @@ const Login = () => {
       callbackUrl: "https://pc-parts-client.vercel.app/",
     });
   };
-  if (session?.user?.email || user) {
-    Swal.fire({
-      title: "Successfully login",
-      icon: "success",
-    }).then((res) => {
-      // console.log(res);
-      if (res?.isConfirmed) {
-        router.replace("/");
-      }
-    });
-  }
+  useEffect(() => {
+    if (session?.user?.email || user) {
+      Swal.fire({
+        title: "Successfully login",
+        icon: "success",
+      }).then((res) => {
+        // console.log(res);
+        if (res?.isConfirmed) {
+          router.replace("/");
+        }
+      });
+    }
+  }, [router, session?.user?.email, user]);
   // useEffect(() => {
   //   if (user || session) {
   //     // router.push("/");

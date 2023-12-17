@@ -47,6 +47,12 @@ const BuildPc = () => {
   // console.log(myData);
   const buildPc = async () => {
     try {
+      if (products.length < 5) {
+        return Swal.fire({
+          text: "Please select a minimum of 5 parts",
+          icon: "warning",
+        });
+      }
       const response = await fetch(
         // "http://localhost:5000/api/v1/pc-build",
         "https://pc-builder-gules-psi.vercel.app/api/v1/pc-build",
@@ -327,9 +333,9 @@ const BuildPc = () => {
               return (
                 <Card
                   key={product._id}
-                  className='bg-[#3c94b4]'
+                  className='bg-[#e2e3e3]'
                   style={{
-                    padding: "2px",
+                    padding: "8px 0",
                     width: 350,
                     margin: "0",
                   }}
@@ -338,12 +344,12 @@ const BuildPc = () => {
                     <div className='flex gap-5'>
                       <Image
                         alt='image'
-                        className='rounded-sm'
+                        className='rounded-md shadow-gray-400 shadow-md'
                         width={80}
                         height={80}
                         src={product?.img1}
                       />
-                      <div className='text-base font-medium text-gray-300'>
+                      <div className='text-base text-left font-medium text-gray-900'>
                         <p>Name: {product?.Category}</p>
                         <p>Price: {product?.Price}</p>
                         <p>Status: {product?.Status}</p>
@@ -370,16 +376,3 @@ export default BuildPc;
 BuildPc.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
-
-// export const getServerSideProps = async () => {
-
-//     const result = await fetch('http://localhost:3000/parts')
-
-//     const data = await result.json()
-
-//     return {
-//         props: {
-//             catagory: data
-//         },
-//     }
-// }

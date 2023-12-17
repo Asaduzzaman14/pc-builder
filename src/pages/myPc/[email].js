@@ -3,7 +3,7 @@ import { auth } from "@/firebase/firebase.auth";
 import { useSession } from "next-auth/react";
 import React, { useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { redirect } from "next/navigation";
+import { redirect, useParams } from "next/navigation";
 import Image from "next/image";
 
 import Swal from "sweetalert2";
@@ -73,12 +73,12 @@ const MyPc = ({ products }) => {
                 <h2 className='py-3'>{product?.email}</h2>
 
                 <div className='flex justify-end'>
-                  <button
+                  {/* <button
                     onClick={() => handleDelete(product?._id)}
                     className='border h-fit bg-red-600 px-3 py-1  rounded-md'
                   >
                     Delete
-                  </button>
+                  </button> */}
                 </div>
               </div>
               <div>
@@ -123,19 +123,11 @@ MyPc.getLayout = function getLayout(page) {
 };
 
 export const getServerSideProps = async (context) => {
-  // Access query parameters from the context
-  console.log(context);
   const { query } = context;
-  console.log(query);
 
-  // Use the query parameters to construct the API URL
   const apiUrl = `https://pc-builder-gules-psi.vercel.app/api/v1/pc-build?email=${query?.email}`;
-
-  // Fetch data from the dynamic API URL
   const result = await fetch(apiUrl);
-
-  // Parse the JSON data
-  const data = await result?.json();
+  const data = await result.json();
 
   return {
     props: {
@@ -143,7 +135,6 @@ export const getServerSideProps = async (context) => {
     },
   };
 };
-
 // export const getServerSideProps = async () => {
 //   const result = await fetch(
 //     "https://pc-builder-gules-psi.vercel.app/api/v1/pc-build"
