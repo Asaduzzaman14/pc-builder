@@ -1,10 +1,12 @@
 import RootLayout from "@/components/Layoutes/RootLayout";
 import { auth } from "@/firebase/firebase.auth";
 import { useSession } from "next-auth/react";
-import React from "react";
+import React, { useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { redirect } from "next/navigation";
 import Image from "next/image";
+
+import Swal from "sweetalert2";
 
 import { useRouter } from "next/router";
 const MyPc = ({ products }) => {
@@ -13,10 +15,52 @@ const MyPc = ({ products }) => {
   const [user, loadign, err] = useAuthState(auth);
   const router = useRouter();
 
-  if (!session && !user) {
-    router?.push("/login");
-    // redirect("/blogs");
-  }
+  useEffect(() => {
+    if (!session && !user) {
+      router?.push("/login");
+      // redirect("/blogs");
+    }
+  }, []);
+
+  const handleDelete = async (id) => {
+    try {
+      const result = await Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      });
+
+      if (result.isConfirmed) {
+        // Make a DELETE request to your API
+        const response = await fetch(
+          `https://pc-builder-gules-psi.vercel.app/api/v1/pc-build/${id}`,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        if (response.ok) {
+          // Update the state only if the deletion was successful
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success",
+          });
+        } else {
+          console.error("Failed to delete item");
+        }
+      }
+    } catch (error) {
+      console.error("Error deleting item", error);
+    }
+  };
 
   return (
     <div className='px-5 mb-4 lg:px-8'>
@@ -25,7 +69,18 @@ const MyPc = ({ products }) => {
         {products.map((product) => {
           return (
             <div key={product._id} className='bg-[#0c1b33]'>
-              <h2 className='py-3'>{product?.email}</h2>
+              <div className='flex justify-between items-center px-3'>
+                <h2 className='py-3'>{product?.email}</h2>
+
+                <div className='flex justify-end'>
+                  <button
+                    onClick={() => handleDelete(product?._id)}
+                    className='border h-fit bg-red-600 px-3 py-1  rounded-md'
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
               <div>
                 {product?.products.map((item) => {
                   return (

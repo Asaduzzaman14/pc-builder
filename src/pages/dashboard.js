@@ -1,13 +1,16 @@
-import authMiddleware from "@/middleware";
+import RootLayout from "@/components/Layoutes/RootLayout";
 import React from "react";
 
 const DashboardPage = () => {
   return (
     <div>
-      <h1>Private Dashboard</h1>
-      <p>This page is protected. Only authenticated users can access it.</p>
+      <h2 className='pt-5'>Dashboard</h2>
     </div>
   );
 };
 
-export default authMiddleware(DashboardPage);
+export default DashboardPage;
+
+DashboardPage.getLayout = function getLayout(page) {
+  return <RootLayout>{page}</RootLayout>;
+};

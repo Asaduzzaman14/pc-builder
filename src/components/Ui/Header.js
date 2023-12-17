@@ -215,6 +215,17 @@ const App = () => {
                 >
                   <Link
                     onClick={() => setOpen(!open)}
+                    href='/dashboard'
+                    className='text-lg text-gray-200 p-2 delay-300 translate-x-0 hover:translate-x-3 underline-offset-[20px] hover:text-sky-500 font-semibold transition-all duration-800'
+                  >
+                    Dashboard
+                  </Link>
+                </li>
+                <li
+                  className={`relative group md:ml-3 text-xl md:my-0 py-4 transition-all duration-500 ease-in`}
+                >
+                  <Link
+                    onClick={() => setOpen(!open)}
                     href={`/myPc/${email}`}
                     className='text-lg text-gray-200 p-2 delay-300 translate-x-0 hover:translate-x-3 underline-offset-[20px] hover:text-sky-500 font-semibold transition-all duration-800'
                   >

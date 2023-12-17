@@ -49,14 +49,19 @@ const Login = () => {
     Swal.fire({
       title: "Successfully login",
       icon: "success",
+    }).then((res) => {
+      // console.log(res);
+      if (res?.isConfirmed) {
+        router.replace("/");
+      }
     });
   }
-  useEffect(() => {
-    if (user || session) {
-      // router.push("/");
-      router.replace("/");
-    }
-  }, [user, session, router]);
+  // useEffect(() => {
+  //   if (user || session) {
+  //     // router.push("/");
+  //     router.replace("/");
+  //   }
+  // }, [user, session, router]);
 
   return (
     <div>
