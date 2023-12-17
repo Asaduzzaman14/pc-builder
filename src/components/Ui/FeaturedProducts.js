@@ -22,6 +22,7 @@ const FeaturedProducts = ({ products }) => {
                   alt='aa'
                   className='rounded-md'
                   width={300}
+                  loading='lazy'
                   height={500}
                   src={product?.img1}
                 />

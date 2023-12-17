@@ -215,7 +215,7 @@ const App = () => {
                 >
                   <Link
                     onClick={() => setOpen(!open)}
-                    href={`/my-pc/:${email}`}
+                    href={`/myPc/${email}`}
                     className='text-lg text-gray-200 p-2 delay-300 translate-x-0 hover:translate-x-3 underline-offset-[20px] hover:text-sky-500 font-semibold transition-all duration-800'
                   >
                     MY PC

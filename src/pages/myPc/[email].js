@@ -69,10 +69,12 @@ MyPc.getLayout = function getLayout(page) {
 
 export const getServerSideProps = async (context) => {
   // Access query parameters from the context
+  console.log(context);
   const { query } = context;
+  console.log(query);
 
   // Use the query parameters to construct the API URL
-  const apiUrl = `https://pc-builder-gules-psi.vercel.app/api/v1/pc-build?email=${query.param1}`;
+  const apiUrl = `https://pc-builder-gules-psi.vercel.app/api/v1/pc-build?email=${query?.email}`;
 
   // Fetch data from the dynamic API URL
   const result = await fetch(apiUrl);
