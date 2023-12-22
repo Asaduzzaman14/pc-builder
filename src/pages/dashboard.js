@@ -1,4 +1,4 @@
-import RootLayout from "@/components/Layoutes/RootLayout";
+import DashboardLayout from "@/components/Layoutes/DashboardLayout";
 import React from "react";
 
 const DashboardPage = () => {
@@ -12,5 +12,5 @@ const DashboardPage = () => {
 export default DashboardPage;
 
 DashboardPage.getLayout = function getLayout(page) {
-  return <RootLayout>{page}</RootLayout>;
+  return <DashboardLayout>{page}</DashboardLayout>;
 };
