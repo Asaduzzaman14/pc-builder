@@ -2,30 +2,21 @@ import React from "react";
 import { useRouter } from "next/router";
 import { SessionProvider } from "next-auth/react";
 import { Button } from "antd";
+import Header from "../dashboardUi/Header";
+import Footer from "../dashboardUi/Footer";
+import DahsboardSidebar from "../dashboardUi/DahsboardSidebar";
 
 const DashboardLayout = ({ children }) => {
-  const router = useRouter();
-
-  const handleClick = () => {
-    router.push("/");
-  };
   return (
     <SessionProvider>
       {/* dashboard header  */}
       <div className=''>
-        <Button onClick={handleClick} type='primary' danger>
-          home
-        </Button>
-        <div>
-          <h2 className=' py-2 bg-gray-200 text-slate-700'>Header</h2>
-        </div>
+        <Header />
       </div>
       {/* dashboard header  */}
       {/* end */}
       <div className='flex gap-4'>
-        <div className=' border border-red-600 p-5'>
-          <div>sidebar</div>
-        </div>
+        <DahsboardSidebar />
         <div
           style={{
             // padding: "20px",
@@ -38,10 +29,7 @@ const DashboardLayout = ({ children }) => {
 
       {/* dashboard footer start */}
       <div>
-        <p className='p-2 bg-gray-200 text-black'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
-          iure?
-        </p>
+        <Footer />
       </div>
     </SessionProvider>
   );
