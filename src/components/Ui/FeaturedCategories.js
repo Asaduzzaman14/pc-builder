@@ -3,7 +3,7 @@ import React from "react";
 
 const FeaturedCategories = () => {
   return (
-    <div className='pt-8 px-5 mx-auto lg:px-10 '>
+    <div className='pt-8 px-2 mx-auto lg:px-10 '>
       <h2>Featured Categories</h2>
 
       <div className='grid place-items-center grid-cols-1 lg:grid-cols-4 sm:gap-x-5 gap-6 mt-10'>
