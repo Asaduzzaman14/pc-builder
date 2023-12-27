@@ -9,7 +9,7 @@ const ProductDetails = ({ product }) => {
   // console.log("product", product);
   return (
     <div>
-      <h2 className='pt-2'>This is product details: {product?.Category} </h2>
+      <h2 className='pt-2'> product details {product?.Category} </h2>
       <div className='flex justify-center mt-7'>
         <div
           key={product._id}
@@ -43,6 +43,12 @@ const ProductDetails = ({ product }) => {
             {product?.Details && (
               <p>Details: {product?.Details?.slice(0, 155)}...</p>
             )}
+
+            <div>
+              <button className='border px-3 py-2 rounded mt-4 bg-sky-500 text-gray-900'>
+                Add To Build
+              </button>
+            </div>
           </div>
         </div>
       </div>

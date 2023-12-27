@@ -7,7 +7,7 @@ const FeaturedCategories = () => {
       <h2>Featured Categories</h2>
 
       <div className='grid place-items-center grid-cols-1 lg:grid-cols-4 sm:gap-x-5 gap-6 mt-10'>
-        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-slate-500'>
+        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-gray-500'>
           <Link href='/build/Speaker?query=Speaker'>
             <h3 className='border hover:border-sky-600 p-4 rounded-md text-center font-medium'>
               Speaker
@@ -15,7 +15,7 @@ const FeaturedCategories = () => {
           </Link>
         </div>
 
-        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-slate-500'>
+        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-gray-500'>
           <Link href='/build/Casing?query=Casing'>
             <h3 className='border hover:border-sky-600 p-4 rounded-md text-center font-medium'>
               Casing
@@ -23,7 +23,7 @@ const FeaturedCategories = () => {
           </Link>
         </div>
 
-        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-slate-500'>
+        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-gray-500'>
           <Link href='/build/cpu?query=CPU'>
             <h3 className='border hover:border-sky-600 p-4 rounded-md text-center font-medium'>
               CPU
@@ -31,7 +31,7 @@ const FeaturedCategories = () => {
           </Link>
         </div>
 
-        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-slate-500'>
+        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-gray-500'>
           <Link href='/build/gpu?query=GPU'>
             <h3 className='border hover:border-sky-600 p-4 rounded-md text-center font-medium'>
               GPU
@@ -39,21 +39,21 @@ const FeaturedCategories = () => {
           </Link>
         </div>
 
-        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-slate-500'>
+        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-gray-500'>
           <Link href='/build/Keyboard?query=Keyboard'>
             <h3 className='border hover:border-sky-600 p-4 rounded-md text-center font-medium'>
               Keyboard
             </h3>
           </Link>
         </div>
-        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-slate-500'>
+        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-gray-500'>
           <Link href='/build/Mouse?query=Mouse'>
             <h3 className='border hover:border-sky-600 p-4 rounded-md text-center font-medium'>
               Mouse{" "}
             </h3>
           </Link>
         </div>
-        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-slate-500'>
+        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-gray-500'>
           <Link href='/build/PSU?query=PSU'>
             <h3 className='border hover:border-sky-600 p-4 rounded-md text-center font-medium'>
               PSU{" "}
@@ -61,7 +61,7 @@ const FeaturedCategories = () => {
           </Link>
         </div>
 
-        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-slate-500'>
+        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-gray-500'>
           <Link href='/build/ram?query=RAM'>
             <h3 className='border hover:border-sky-600 p-4 rounded-md text-center font-medium'>
               RAM{" "}
@@ -74,7 +74,7 @@ const FeaturedCategories = () => {
           </Link>
         </div> */}
 
-        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-slate-500'>
+        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-gray-500'>
           <Link href='/build/SSD?query=SSD'>
             <h3 className='border hover:border-sky-600 p-4 rounded-md text-center font-medium'>
               SSD
@@ -87,7 +87,7 @@ const FeaturedCategories = () => {
           </Link>
         </div> */}
 
-        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-slate-500'>
+        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-gray-500'>
           <Link href='/build/cpu-cooler?query=Cpu-Cooler'>
             <h3 className='border hover:border-sky-600 p-4 rounded-md text-center font-medium'>
               Cpu Cooler
@@ -100,7 +100,7 @@ const FeaturedCategories = () => {
             <h3 className='border hover:border-sky-600 p-4 rounded-md text-center font-medium'>Processor </h3>
           </Link>
         </div> */}
-        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-slate-500'>
+        <div className='hover:shadow-sky-800 rounded-md w-40 lg:w-48 shadow-md shadow-gray-500'>
           <Link href='/build/MotherBoard?query=MotherBoard'>
             <h3 className='border hover:border-sky-600 p-4 rounded-md text-center font-medium'>
               Motherboard{" "}
