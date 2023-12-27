@@ -9,6 +9,8 @@ import { IoMdClose } from "react-icons/io";
 import { auth } from "@/firebase/firebase.auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { BsArrowDown } from "react-icons/bs";
+import { useSelector } from "react-redux";
+import { connect } from "react-redux";
 
 const items = [
   {
@@ -110,13 +112,12 @@ const items = [
   },
 ];
 
-const App = () => {
+const App = ({ yourReduxState }) => {
   let [open, setOpen] = useState(false);
-
   const { data: session } = useSession();
   const [user, loadign, err] = useAuthState(auth);
-
   const [email, setEmail] = useState("");
+  const { products, catagory } = useSelector((state) => state.cart);
 
   useEffect(() => {
     if (user) {
@@ -236,7 +237,7 @@ const App = () => {
                   onClick={() => setOpen(!open)}
                   className='md:ml-3 md:my-0  py-4 transition-all duration-500 ease-in '
                 >
-                  <Button>
+                  <Button className='relative'>
                     <Link
                       href='/build-pc'
                       style={{
@@ -247,6 +248,9 @@ const App = () => {
                     >
                       Build PC
                     </Link>
+                    <span className='absolute -top-1.5 flex text-center items-center  justify-items-start ms-auto bg-red-700 text-white w-5 h-5 rounded-full'>
+                      {products?.length}
+                    </span>
                   </Button>
                 </li>
                 <li
