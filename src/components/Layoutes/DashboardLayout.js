@@ -10,18 +10,19 @@ const DashboardLayout = ({ children }) => {
   return (
     <SessionProvider>
       {/* dashboard header  */}
-      <div className=''>
+      <div className='fixed w-full '>
         <Header />
       </div>
       {/* dashboard header  */}
       {/* end */}
-      <div className='flex gap-4'>
+      <div className='flex gap-4 '>
         <DahsboardSidebar />
         <div
           style={{
             // padding: "20px",
             minHeight: "100vh",
           }}
+          className='overflow-y-auto'
         >
           {children}
         </div>

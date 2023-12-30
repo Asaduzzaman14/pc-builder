@@ -11,14 +11,14 @@ const RootLayout = ({ children }) => {
     <Provider store={store}>
       <SessionProvider>
         <App />
-        <div
+
+        <section
           style={{
-            // padding: "20px",
             minHeight: "100vh",
           }}
         >
           {children}
-        </div>
+        </section>
         <Footer />
       </SessionProvider>
     </Provider>
