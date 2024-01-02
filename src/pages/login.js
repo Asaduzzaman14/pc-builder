@@ -36,6 +36,8 @@ const Login = () => {
         setError("Invalid Credentials");
         return;
       }
+
+      router.back();
     } catch (error) {
       console.log(error);
     }
