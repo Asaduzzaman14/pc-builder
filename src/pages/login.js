@@ -8,33 +8,39 @@ import styles from "@/styles/Login.module.css";
 import { signIn, useSession } from "next-auth/react";
 import RootLayout from "@/components/Layoutes/RootLayout";
 import Swal from "sweetalert2";
-import {
-  useAuthState,
-  useCreateUserWithEmailAndPassword,
-  useSignInWithEmailAndPassword,
-} from "react-firebase-hooks/auth";
+
 import { auth } from "@/firebase/firebase.auth";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Login = () => {
   const router = useRouter();
-
+  const [error, setError] = useState("");
   const { data: session } = useSession();
-  const [user, loadign, err] = useAuthState(auth);
-
   const { register, handleSubmit } = useForm();
 
-  const [signInWithEmailAndPassword, loading, error] =
-    useSignInWithEmailAndPassword(auth);
-  const onSubmit = (data) => {
-    // console.log(data);
-    signInWithEmailAndPassword(data.email, data.password);
+  const onSubmit = async (data) => {
+    console.log(data);
+    const { email, password } = data;
+    console.log(email, password);
+    try {
+      const res = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+      console.log(res, "res");
+      if (res?.error) {
+        setError("Invalid Credentials");
+        return;
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  console.log(user);
   const login = () => {
     signIn("github", {
       callbackUrl: "https://pc-parts-client.vercel.app/",
@@ -45,25 +51,6 @@ const Login = () => {
       callbackUrl: "https://pc-parts-client.vercel.app/",
     });
   };
-  useEffect(() => {
-    if (session?.user?.email || user) {
-      Swal.fire({
-        title: "Successfully login",
-        icon: "success",
-      }).then((res) => {
-        // console.log(res);
-        if (res?.isConfirmed) {
-          router.replace("/");
-        }
-      });
-    }
-  }, [router, session?.user?.email, user]);
-  // useEffect(() => {
-  //   if (user || session) {
-  //     // router.push("/");
-  //     router.replace("/");
-  //   }
-  // }, [user, session, router]);
 
   return (
     <div>
@@ -79,6 +66,7 @@ const Login = () => {
           <GithubOutlined onClick={() => login()} />
         </div>
         <hr />
+        <span>{error}</span>
         <form onSubmit={handleSubmit(onSubmit)} className=''>
           <label className='' htmlFor=''>
             Your Email
