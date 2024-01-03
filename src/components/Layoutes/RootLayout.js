@@ -5,8 +5,13 @@ import App from "../Ui/Header";
 import { SessionProvider } from "next-auth/react";
 import { Provider } from "react-redux";
 import store from "@/redux/store";
+import HandleScroll from "../Ui/HandleScroll ";
 
 const RootLayout = ({ children }) => {
+  const goToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Provider store={store}>
       <SessionProvider>
@@ -19,6 +24,9 @@ const RootLayout = ({ children }) => {
         >
           {children}
         </section>
+        <div className=' relative'>
+          <HandleScroll />
+        </div>
         <Footer />
       </SessionProvider>
     </Provider>

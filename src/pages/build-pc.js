@@ -1,7 +1,7 @@
 import RootLayout from "@/components/Layoutes/RootLayout";
 import { Button, Card, Image } from "antd";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import {
   BsDeviceSsd,
@@ -59,6 +59,19 @@ const BuildPc = () => {
       console.error("Error during POST request:", error);
     }
   };
+
+  useEffect(() => {
+    const scrollToMiddle = () => {
+      // Calculate the middle position based on the page height
+      const middlePosition = Math.floor(document.body.scrollHeight / 1.5);
+
+      // Scroll to the middle position
+      window.scrollTo(0, middlePosition);
+    };
+
+    // Call the scrollToMiddle function when the component mounts
+    scrollToMiddle();
+  }, []); // Empty dependency array to run the effect only once when the component mounts
 
   return (
     <div>
@@ -343,7 +356,10 @@ const BuildPc = () => {
             })}
           </div>
           {products.length > 0 && (
-            <Button onClick={() => buildPc()} className='text-white my-4'>
+            <Button
+              onClick={() => buildPc()}
+              className=' my-4 px-5 mt-10 bg-sky-300 text-black font-semibold'
+            >
               BUILD
             </Button>
           )}

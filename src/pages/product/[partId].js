@@ -2,11 +2,20 @@ import RootLayout from "@/components/Layoutes/RootLayout";
 import { Button, Card, Rate } from "antd";
 import Link from "next/link";
 import Image from "next/image";
-
+import { useDispatch, useSelector } from "react-redux";
 import React from "react";
+import { addToCart } from "@/redux/features/build";
 
 const ProductDetails = ({ product }) => {
   // console.log("product", product);
+  const { products, catagory } = useSelector((state) => state.cart);
+
+  const dispatch = useDispatch();
+
+  const handleAddProduct = (paylode) => {
+    dispatch(addToCart(paylode));
+  };
+
   return (
     <div>
       <h2 className='pt-2'> product details {product?.Category} </h2>
@@ -45,9 +54,24 @@ const ProductDetails = ({ product }) => {
             )}
 
             <div>
-              <button className='border px-3 py-2 rounded mt-4 bg-sky-500 text-gray-900'>
+              {catagory?.find((element) => element == product?.Category) ? (
+                <button className='border px-3 py-1 rounded mt-4 bg-red-500 hover:text-black text-gray-900'>
+                  Added
+                </button>
+              ) : (
+                <button
+                  onClick={() => handleAddProduct(product)}
+                  className='border px-3 py-1 rounded mt-4 bg-sky-500 text-gray-900'
+                >
+                  Add To Build
+                </button>
+              )}
+              {/* <button
+                onClick={() => handleAddProduct(product)}
+                className='border px-3 py-2 rounded mt-4 bg-sky-500 text-gray-900'
+              >
                 Add To Build
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

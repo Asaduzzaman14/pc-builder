@@ -75,7 +75,7 @@ const OurClient = () => {
                 <div className='card-body mt-3'>
                   <h5 className='font-semibold text-lg text-[#01b0f8]'>
                     Ronne Galle <br />
-                    <span className='text-[#666666]'> Project Manager </span>
+                    <span className='text-[#666666]'>Singapore</span>
                   </h5>
                   <p className='card-text text-[#c5c5ce]'>
                     Nam libero tempore, cum soluta nobis est eligendi optio
@@ -101,7 +101,7 @@ const OurClient = () => {
                   <h5 className='font-semibold text-lg text-[#01b0f8]'>
                     Missy Limana
                     <br />
-                    <span className='text-[#666666]'> Engineer </span>
+                    <span className='text-[#666666]'> Bangladesh </span>
                   </h5>
                   <p className='card-text text-[#c5c5ce]'>
                     Nam libero tempore, cum soluta nobis est eligendi optio
@@ -127,7 +127,7 @@ const OurClient = () => {
                   <h5 className='font-semibold text-lg text-[#01b0f8]'>
                     Martha Brown
                     <br />
-                    <span className='text-[#666666]'> Project Manager </span>
+                    <span className='text-[#666666]'> japan </span>
                   </h5>
                   <p className='card-text text-[#c5c5ce]'>
                     Nam libero tempore, cum soluta nobis est eligendi optio
@@ -140,7 +140,7 @@ const OurClient = () => {
               style={{ marginRight: "10px" }}
               className='text-white   rounded-md bg-gray-800  text-left max-w-[280px] mx-auto lg:max-w-[320px] '
             >
-              <div className='card p-2 max-w-[260px] lg:max-w-[320px] text-left'>
+              <div className='card p-2  max-w-fit text-left'>
                 <Image
                   loading='lazy'
                   width={"500"}
@@ -153,7 +153,7 @@ const OurClient = () => {
                   <h5 className='font-semibold text-lg text-[#01b0f8]'>
                     Hanna Lisem
                     <br />
-                    <span className='text-[#666666]'> Project Manager </span>
+                    <span className='text-[#666666]'> USA </span>
                   </h5>
                   <p className='card-text text-[#c5c5ce]'>
                     Nam libero tempore, cum soluta nobis est eligendi optio
