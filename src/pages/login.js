@@ -31,7 +31,6 @@ const Login = () => {
         password,
         redirect: false,
       });
-      console.log(res, "res");
       if (res?.error) {
         setError("Invalid Credentials");
         return;
@@ -73,11 +72,16 @@ const Login = () => {
           <label className='' htmlFor=''>
             Your Email
           </label>
-          <input {...register("email", { required: true })} type='email' />
+          <input
+            className='text-black'
+            {...register("email", { required: true })}
+            type='email'
+          />
           <label className='' htmlFor=''>
             Your Password
           </label>
           <input
+            className='text-black'
             {...register("password", { required: true })}
             type='password'
           />

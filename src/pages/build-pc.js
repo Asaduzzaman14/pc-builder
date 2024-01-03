@@ -1,7 +1,7 @@
 import RootLayout from "@/components/Layoutes/RootLayout";
 import { Button, Card, Image } from "antd";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import {
   BsDeviceSsd,
@@ -10,12 +10,7 @@ import {
   BsGpuCard,
   BsMouseFill,
 } from "react-icons/bs";
-import {
-  GiApolloCapsule,
-  GiProcessor,
-  GiStickFrame,
-  GiWoodFrame,
-} from "react-icons/gi";
+import { GiApolloCapsule, GiProcessor } from "react-icons/gi";
 import { FiMonitor, FiSpeaker } from "react-icons/fi";
 import { PiComputerTower } from "react-icons/pi";
 import { FaKeyboard } from "react-icons/fa";
@@ -23,25 +18,13 @@ import { RiZcoolLine } from "react-icons/ri";
 import { CgSmartphoneRam } from "react-icons/cg";
 import { useSession } from "next-auth/react";
 import Swal from "sweetalert2";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "@/firebase/firebase.auth";
 
 const BuildPc = () => {
   const { data: session } = useSession();
-  const [user, loadign, err] = useAuthState(auth);
-  const [email, setEmail] = useState("");
   const { products, catagory } = useSelector((state) => state.cart);
-
-  useEffect(() => {
-    if (user) {
-      setEmail(user?.email);
-    } else {
-      setEmail(session?.user?.email);
-    }
-  }, [user, session]);
-
+  console.log(session?.user?.email);
   const myData = {
-    email: email,
+    email: session?.user?.email,
     products: products,
   };
   // console.log(myData);
@@ -68,7 +51,6 @@ const BuildPc = () => {
       if (resData) {
         Swal.fire({
           title: "Build success",
-          // text: "You clicked the button!",
           icon: "success",
         });
       }
