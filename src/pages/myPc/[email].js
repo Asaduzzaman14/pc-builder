@@ -90,18 +90,21 @@ const MyPc = () => {
         {items?.map((product) => {
           return (
             <div key={product._id} className='bg-[#0c1b33]'>
-              <div className='flex justify-between items-center px-3'>
-                <h2 className='py-3'>{product?.email}</h2>
+              <div className='flex flex-col justify-between items-center px-3'>
+                <h2 className='py-3 text-sm lg:text-lg'>{product?.email}</h2>
 
-                <div className='flex justify-end'>
+                <div className='flex  justify-items-end ms-auto items-center'>
+                  {" "}
+                  {/* Added 'items-center' to center the button vertically */}
                   <button
                     onClick={() => handleDelete(product?._id)}
-                    className='border h-fit bg-red-600 px-3 py-1  rounded-md'
+                    className='border h-fit bg-red-600 px-3 py-1 rounded-md'
                   >
                     Delete
                   </button>
                 </div>
               </div>
+
               <div>
                 {product?.products.map((item) => {
                   return (
@@ -112,7 +115,7 @@ const MyPc = () => {
                       <Image
                         className=' rounded-sm'
                         alt='aa'
-                        width={150}
+                        width={100}
                         height={100}
                         src={item?.img1}
                       ></Image>
