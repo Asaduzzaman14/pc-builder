@@ -211,7 +211,7 @@ const App = ({ yourReduxState }) => {
                     BLOGS
                   </Link>
                 </li>
-                <li
+                {/* <li
                   className={`relative group md:ml-3 text-xl md:my-0 py-4 transition-all duration-500 ease-in`}
                 >
                   <Link
@@ -221,7 +221,7 @@ const App = ({ yourReduxState }) => {
                   >
                     Dashboard
                   </Link>
-                </li>
+                </li> */}
                 <li
                   className={`relative group md:ml-3 text-xl md:my-0 py-4 transition-all duration-500 ease-in`}
                 >

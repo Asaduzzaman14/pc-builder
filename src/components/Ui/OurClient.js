@@ -61,14 +61,14 @@ const OurClient = () => {
           >
             <div
               style={{ marginRight: "10px" }}
-              className='text-white border-2 rounded-md bg-gray-800  text-left max-w-[280px] mx-auto lg:max-w-[320px] '
+              className='text-white   rounded-md bg-gray-800  text-left max-w-[280px] mx-auto lg:max-w-[320px] '
             >
-              <div className='card p-2 max-w-[260px] lg:max-w-[320px] text-left'>
+              <div className='card p-2 max-w-fit text-left'>
                 <Image
                   loading='lazy'
                   width={"500"}
                   height={"350"}
-                  className='card-img-top rounded-md p-1'
+                  className='card-img-top mx-auto rounded-md p-1'
                   src='https://images.unsplash.com/photo-1572561300743-2dd367ed0c9a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=300'
                   alt=''
                 />
@@ -86,9 +86,9 @@ const OurClient = () => {
             </div>
             <div
               style={{ marginRight: "10px" }}
-              className='text-white border-2 rounded-md bg-gray-800  text-left max-w-[280px] mx-auto lg:max-w-[320px] '
+              className='text-white rounded-md bg-gray-800  text-left max-w-[280px] mx-auto lg:max-w-[320px] '
             >
-              <div className='card p-2 max-w-[260px] lg:max-w-[320px] text-left'>
+              <div className='card p-2 max-w-fit text-left'>
                 <Image
                   loading='lazy'
                   width={"500"}
@@ -112,9 +112,9 @@ const OurClient = () => {
             </div>
             <div
               style={{ marginRight: "10px" }}
-              className='text-white border-2 rounded-md bg-gray-800  text-left max-w-[280px] mx-auto lg:max-w-[320px] '
+              className='text-white   rounded-md bg-gray-800  text-left max-w-[280px] mx-auto lg:max-w-[320px] '
             >
-              <div className='card p-2 max-w-[260px] lg:max-w-[320px] text-left'>
+              <div className='card p-2 max-w-fit text-left'>
                 <Image
                   loading='lazy'
                   width={"500"}
@@ -138,7 +138,7 @@ const OurClient = () => {
             </div>
             <div
               style={{ marginRight: "10px" }}
-              className='text-white border-2 rounded-md bg-gray-800  text-left max-w-[280px] mx-auto lg:max-w-[320px] '
+              className='text-white   rounded-md bg-gray-800  text-left max-w-[280px] mx-auto lg:max-w-[320px] '
             >
               <div className='card p-2 max-w-[260px] lg:max-w-[320px] text-left'>
                 <Image
