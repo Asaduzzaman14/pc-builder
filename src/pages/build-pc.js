@@ -322,7 +322,12 @@ const BuildPc = () => {
         </div>
 
         <div className='my-5 text-center'>
-          {products.length > 0 && <h2 className='py-2'>MY PARTS</h2>}
+          {products?.length == 0 && (
+            <h3 className='py-2 text-md text-red-500'>
+              Please Select Some Parts for build your pc *
+            </h3>
+          )}
+          {products?.length > 0 && <h2 className='py-2'>MY PARTS</h2>}
           <div className='grid justify-items-center md:grid-cols-2  gap-3'>
             {products?.map((product) => {
               return (

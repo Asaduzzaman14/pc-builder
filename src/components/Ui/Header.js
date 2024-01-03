@@ -248,7 +248,7 @@ const App = ({ yourReduxState }) => {
                     >
                       Build PC
                     </Link>
-                    <span className='absolute -top-1.5 flex text-center items-center  justify-items-start ms-auto bg-red-700 text-white w-5 h-5 rounded-full'>
+                    <span className='absolute -top-1.5 flex text-center items-center font-semibold justify-items-start ms-auto bg-red-700 text-white w-5 pb-1 h-5 rounded-full'>
                       {products?.length}
                     </span>
                   </Button>
