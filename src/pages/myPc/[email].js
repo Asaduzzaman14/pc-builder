@@ -30,13 +30,6 @@ const MyPc = () => {
     }
   };
 
-  useEffect(() => {
-    if (!session && !user) {
-      router?.push("/login");
-      // redirect("/blogs");
-    }
-  }, []);
-
   // delete method
   const handleDelete = async (id) => {
     try {

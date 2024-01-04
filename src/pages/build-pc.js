@@ -1,3 +1,4 @@
+"use Client";
 import RootLayout from "@/components/Layoutes/RootLayout";
 import { Button, Card, Image } from "antd";
 import Link from "next/link";

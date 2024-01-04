@@ -36,12 +36,20 @@ const Login = () => {
         return;
       }
 
+      Swal.fire({
+        title: "Login Success",
+        icon: "success",
+      });
       router.back();
+      // router.push("/");
     } catch (error) {
       console.log(error);
     }
   };
 
+  if (session?.user?.email) {
+    router.back();
+  }
   const login = () => {
     signIn("github", {
       callbackUrl: "https://pc-parts-client.vercel.app/",

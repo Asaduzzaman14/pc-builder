@@ -120,12 +120,8 @@ const App = ({ yourReduxState }) => {
   const { products, catagory } = useSelector((state) => state.cart);
 
   useEffect(() => {
-    if (user) {
-      setEmail(user?.email);
-    } else {
-      setEmail(session?.user?.email);
-    }
-  }, [user, session]);
+    setEmail(session?.user?.email);
+  }, [session]);
 
   const signOutUser = () => {
     if (user?.email) {
@@ -150,7 +146,7 @@ const App = ({ yourReduxState }) => {
         <div className=' md:flex justify-between lg:px-10 bg-gray-900 text-white'>
           <div className=' lg:flex-basis-1/4 lg:py-2 '>
             <Link href='/' class=''>
-              <h2 className='text-2xl text-left font-bold py-4 ml-5 lg:ml-8 text-primary'>
+              <h2 className='text-xl lg:text-2xl text-left font-bold py-4 ml-5 lg:ml-8 text-primary'>
                 PC builder
               </h2>
             </Link>

@@ -10,13 +10,6 @@ const About = () => {
   const [user, loadign, err] = useAuthState(auth);
   const router = useRouter();
 
-  useEffect(() => {
-    if (!session && !user) {
-      router?.push("/login");
-      // redirect("/blogs");
-    }
-  }, [router, session, user]);
-
   return (
     <div style={{ textAlign: "center" }}>
       <h2>About</h2>
