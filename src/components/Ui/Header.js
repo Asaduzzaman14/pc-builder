@@ -10,7 +10,6 @@ import { auth } from "@/firebase/firebase.auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { BsArrowDown } from "react-icons/bs";
 import { useSelector } from "react-redux";
-import { connect } from "react-redux";
 
 const items = [
   {
@@ -123,22 +122,10 @@ const App = ({ yourReduxState }) => {
     setEmail(session?.user?.email);
   }, [session]);
 
-  const signOutUser = () => {
-    if (user?.email) {
-      auth
-        .signOut()
-        .then(() => {
-          // Sign-out successful.
-          console.log("User signed out");
-        })
-        .catch((error) => {
-          // An error happened.
-          console.error("Error signing out:", error.message);
-        });
-    } else {
-      signOut();
-    }
+  const handleSignOut = () => {
+    signOut();
   };
+
   return (
     <>
       <div className=' shadow-md z-50 w-full  relative top-0 left-0'>
@@ -237,7 +224,7 @@ const App = ({ yourReduxState }) => {
                     <Link
                       href='/build-pc'
                       style={{
-                        color: "white",
+                        color: "red",
                         padding: "5px 10px",
                         borderRadius: "3px",
                       }}
@@ -254,7 +241,11 @@ const App = ({ yourReduxState }) => {
                   className='md:ml-3 md:my-0  py-4 transition-all duration-500 ease-in '
                 >
                   {session?.user || user?.email ? (
-                    <Button onClick={() => signOutUser()} type='primary' danger>
+                    <Button
+                      onClick={() => handleSignOut()}
+                      type='primary'
+                      danger
+                    >
                       Logout
                     </Button>
                   ) : (

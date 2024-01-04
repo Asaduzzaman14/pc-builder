@@ -1,5 +1,4 @@
-"use client";
-
+"use Client";
 import { Button } from "antd";
 import { GoogleOutlined, GithubOutlined } from "@ant-design/icons";
 import Head from "next/head";
@@ -9,7 +8,6 @@ import { signIn, useSession } from "next-auth/react";
 import RootLayout from "@/components/Layoutes/RootLayout";
 import Swal from "sweetalert2";
 
-import { auth } from "@/firebase/firebase.auth";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -40,16 +38,13 @@ const Login = () => {
         title: "Login Success",
         icon: "success",
       });
-      router.back();
-      // router.push("/");
+
+      router.push("/");
     } catch (error) {
       console.log(error);
     }
   };
 
-  if (session?.user?.email) {
-    router.back();
-  }
   const login = () => {
     signIn("github", {
       callbackUrl: "https://pc-parts-client.vercel.app/",
