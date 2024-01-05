@@ -23,7 +23,6 @@ import Swal from "sweetalert2";
 const BuildPc = () => {
   const { data: session } = useSession();
   const { products, catagory } = useSelector((state) => state.cart);
-  console.log(session?.user?.email);
   const myData = {
     email: session?.user?.email,
     products: products,

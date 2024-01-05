@@ -8,10 +8,6 @@ import store from "@/redux/store";
 import HandleScroll from "../Ui/HandleScroll ";
 
 const RootLayout = ({ children }) => {
-  const goToTop = () => {
-    window.scrollTo(0, 0);
-  };
-
   return (
     <Provider store={store}>
       <SessionProvider>
