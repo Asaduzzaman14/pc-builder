@@ -217,6 +217,17 @@ const App = ({ yourReduxState }) => {
                   </Link>
                 </li>
                 <li
+                  className={`relative group md:ml-3 text-xl md:my-0 py-4 transition-all duration-500 ease-in`}
+                >
+                  <Link
+                    onClick={() => setOpen(!open)}
+                    href={`/users`}
+                    className='text-lg text-gray-200 p-2 delay-300 translate-x-0 hover:translate-x-3 underline-offset-[20px] hover:text-sky-500 font-semibold transition-all duration-800'
+                  >
+                    Users
+                  </Link>
+                </li>
+                <li
                   onClick={() => setOpen(!open)}
                   className='md:ml-3 md:my-0  py-4 transition-all duration-500 ease-in '
                 >

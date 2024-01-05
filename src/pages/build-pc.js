@@ -1,4 +1,3 @@
-"use Client";
 import RootLayout from "@/components/Layoutes/RootLayout";
 import { Button, Card, Image } from "antd";
 import Link from "next/link";
@@ -28,7 +27,16 @@ const BuildPc = () => {
     products: products,
   };
   // console.log(myData);
+
+  if (!session?.user?.email) {
+    router.push("/login");
+  }
+
   const buildPc = async () => {
+    if (!session?.user?.email) {
+      router.push("/login");
+    }
+
     try {
       if (products.length < 5) {
         return Swal.fire({
