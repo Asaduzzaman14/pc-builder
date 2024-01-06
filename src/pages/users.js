@@ -1,3 +1,5 @@
+"use Client";
+
 import RootLayout from "@/components/Layoutes/RootLayout";
 import React, { useEffect, useState } from "react";
 

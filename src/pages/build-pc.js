@@ -28,10 +28,6 @@ const BuildPc = () => {
   };
   // console.log(myData);
 
-  if (!session?.user?.email) {
-    router.push("/login");
-  }
-
   const buildPc = async () => {
     if (!session?.user?.email) {
       router.push("/login");

@@ -1,8 +1,7 @@
 import { connectMongoDB } from "@/lib/mongodb";
 import User from "@/models/user";
 
-// Define the POST API route handler
-export async function Post(req, res) {
+export default async function Post(req, res) {
   try {
     await connectMongoDB();
     const { email } = await req.body;

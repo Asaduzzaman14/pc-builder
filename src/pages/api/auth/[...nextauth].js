@@ -6,6 +6,12 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import { connectMongoDB } from "@/lib/mongodb";
 
+// export const config = {
+//   api: {
+//     bodyParser: false,
+//   },
+// };
+
 export const authOptions = {
   // Configure one or more authentication providers
   providers: [
@@ -34,6 +40,7 @@ export const authOptions = {
         try {
           await connectMongoDB();
           const user = await User.findOne({ email });
+
           if (!user) {
             return null;
           }
@@ -47,6 +54,7 @@ export const authOptions = {
           return user;
         } catch (error) {
           console.error("Error in authorize:", error);
+          return null; // Handle the error appropriately
         }
       },
     }),
