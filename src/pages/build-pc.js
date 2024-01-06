@@ -2,7 +2,7 @@ import RootLayout from "@/components/Layoutes/RootLayout";
 import { Button, Card, Image } from "antd";
 import Link from "next/link";
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   BsDeviceSsd,
   BsFillCassetteFill,
@@ -18,10 +18,13 @@ import { RiZcoolLine } from "react-icons/ri";
 import { CgSmartphoneRam } from "react-icons/cg";
 import { useSession } from "next-auth/react";
 import Swal from "sweetalert2";
+import { clearCart } from "@/redux/features/build";
 
 const BuildPc = () => {
   const { data: session } = useSession();
   const { products, catagory } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
   const myData = {
     email: session?.user?.email,
     products: products,
@@ -53,6 +56,8 @@ const BuildPc = () => {
       );
       const resData = await response?.json();
       if (resData) {
+        dispatch(clearCart());
+
         Swal.fire({
           title: "Build success",
           icon: "success",
