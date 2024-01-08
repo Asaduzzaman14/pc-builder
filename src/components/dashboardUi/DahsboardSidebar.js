@@ -3,7 +3,7 @@ import React from "react";
 const DahsboardSidebar = () => {
   return (
     <>
-      <div className=' border-red-600 max-h-screen -mb-20 overflow-y-scroll p-5'>
+      <div className='pt-5 border-red-600 max-h-screen -mb-20 overflow-y-scroll p-5 '>
         <div>
           <h3 className='text-xl font-semibold pt-1'>Products</h3>
         </div>

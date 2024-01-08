@@ -2,10 +2,11 @@ import React from "react";
 import { useRouter } from "next/router";
 import { SessionProvider } from "next-auth/react";
 import { Button } from "antd";
-import Header from "../dashboardUi/Header";
+import Header from "../dashboardUi/Sidebar";
 import Footer from "../dashboardUi/Footer";
 import DahsboardSidebar from "../dashboardUi/DahsboardSidebar";
 import Link from "next/link";
+import Sidebar from "../dashboardUi/Sidebar";
 
 const DashboardLayout = ({ children }) => {
   return (
@@ -14,22 +15,20 @@ const DashboardLayout = ({ children }) => {
         <Link href={"/"}>
           <span className='py-auto my-auto'>Back</span>
         </Link>
-        {/* <img className='w-12' src={user} alt='' /> */}
       </div>
-      {/*  dashboard sidebar */}
 
       <div className='flex flex-row justify-between'>
-        <div className=' fixed  top-15 left-0  drawer-side h-[80%]'>
+        <div className=' fixed  top-10 left-0  drawer-side h-[80%]'>
           <label htmlFor='dashboard-sidebar' className='drawer-overlay'></label>
           <ul className='overflow-y-scroll bg-primary/95 text-white font-semibold menu  w-40 h-screen'>
-            <Header />
+            <Sidebar />
           </ul>
         </div>
 
-        <div className='  ml-40 justify-end   -2  '>
-          <div className='mx-auto'>{children}</div>
+        <div className='  ml-40 w-[100%] justify-end h-screen p-2  '>
+          <div className='mx-auto min-h-full'>{children}</div>
 
-          <div className='min-w-full'>
+          <div className='min-w-full max-w-screen '>
             <div className=' pt-4 min-w-full'>
               <Footer />
             </div>
