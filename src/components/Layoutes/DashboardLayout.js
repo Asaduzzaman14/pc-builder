@@ -26,7 +26,7 @@ const DashboardLayout = ({ children }) => {
         </div>
 
         <div className='  ml-40 w-[100%] justify-end h-screen p-2  '>
-          <div className='mx-auto min-h-full'>{children}</div>
+          <div className='mx-auto min-h-full max-w-[100%]'>{children}</div>
 
           <div className='min-w-full max-w-screen '>
             <div className=' pt-4 min-w-full'>
