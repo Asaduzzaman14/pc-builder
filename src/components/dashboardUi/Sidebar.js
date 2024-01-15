@@ -2,6 +2,8 @@ import { Button } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import { FaProductHunt } from "react-icons/fa";
+import { ImUsers } from "react-icons/im";
 
 const Sidebar = (props) => {
   const router = useRouter();
@@ -13,15 +15,12 @@ const Sidebar = (props) => {
     <div className=' '>
       <div className=' flex flex-col gap-2 ps-2'>
         <li className=' p-1 rounded-sm flex place-items-center gap-2 hover:bg-[#515151]'>
-          <span className='h-7 w-7 flex justify-center text-xl font-bold bg-gray-400 rounded-full'>
-            P
-          </span>
+          <FaProductHunt className='text-3xl' />
+
           <Link href='/dashboard/products'>Products</Link>
         </li>
         <li className=' p-1 rounded-sm flex place-items-center gap-2 hover:bg-[#515151]'>
-          <span className='h-7 w-7 flex justify-center text-xl font-bold bg-gray-400 rounded-full'>
-            U
-          </span>
+          <ImUsers className='text-3xl' />
           <Link href='/dashboard/users'>Users</Link>
         </li>
         <li className=' p-1 rounded-sm flex place-items-center gap-2 hover:bg-[#515151]'>

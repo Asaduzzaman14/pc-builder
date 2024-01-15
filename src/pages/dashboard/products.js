@@ -22,12 +22,12 @@ const Products = () => {
   }, []);
 
   return (
-    <div className=' w-[200px] '>
+    <div className='bg-white text-black'>
       <h2 className=''>Products {items?.length}</h2>
       <div>
         <div class=' px-1'>
           <h2 class=' font-bold mb-4'>Example Datatable</h2>
-          <table class='w-20  border-2 overflow-scroll text-sm'>
+          <table class='border-2 max-w-[300px] w-[200px] overflow-y-scroll overflow-x-scroll'>
             <thead>
               <tr className='text-sky-500'>
                 <th class='px-4 py-2'>Name</th>
@@ -38,7 +38,7 @@ const Products = () => {
                 <th class='px-4 py-2'>Salary</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className='max-w-[300px] w-[200px]'>
               <tr>
                 <td class='border px-4 py-2'>Airi Satou</td>
                 <td class='border px-4 py-2'>Accountant</td>
