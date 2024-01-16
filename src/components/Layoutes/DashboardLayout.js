@@ -18,13 +18,13 @@ const DashboardLayout = ({ children }) => {
           <span className='py-auto my-auto'>Back</span>
         </Link>
         <MdOutlineMenu
-          className='text-2xl m-1'
+          className='text-2xl m-1 lg:hidden'
           onClick={() => setshow(!show)}
         />
       </div>
 
       <div className='flex flex-row justify-between'>
-        {show && (
+        <div className={`${show ? " hidden lg:block" : "block"}`}>
           <div className=' fixed  top-10 left-0  drawer-side h-[80%]'>
             <label
               htmlFor='dashboard-sidebar'
@@ -34,10 +34,12 @@ const DashboardLayout = ({ children }) => {
               <Sidebar />
             </ul>
           </div>
-        )}
+        </div>
 
         <div
-          className={` ${show && `ml-40 `}w-[100%] justify-end h-screen p-2 `}
+          className={` ${
+            show ? ` ` : "ml-40"
+          }w-[100%] justify-end lg:ml-40 h-screen p-2 `}
         >
           <div className='mx-auto min-h-full max-w-[100%]'>{children}</div>
 
