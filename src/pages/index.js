@@ -37,7 +37,7 @@ Home.getLayout = function getLayout(page) {
 
 export const getStaticProps = async () => {
   const result = await fetch(
-    `https://pc-builder-gules-psi.vercel.app/api/v1/pc-parts`
+    `https://pc-builder-gules-psi.vercel.app/api/v1/pc-parts?limit=20`
   );
   const data = await result?.json();
 

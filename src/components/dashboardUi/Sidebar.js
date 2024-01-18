@@ -39,7 +39,7 @@ const Sidebar = (props) => {
           <span className='h-7 w-7 flex justify-center text-xl font-bold bg-gray-400 rounded-full'>
             P
           </span>
-          <Link href='dashboard/products'>Products</Link>
+          <Link href='/dashboard/allProduct'>All Products</Link>
         </li>
         <li className=' p-1 rounded-sm flex place-items-center gap-2 hover:bg-[#515151]'>
           <span className='h-7 w-7 flex justify-center text-xl font-bold bg-gray-400 rounded-full'>
@@ -61,6 +61,30 @@ const Sidebar = (props) => {
           <Link href='allProduct'>Products</Link>
         </li>
 
+        <li className=' p-1 rounded-sm flex place-items-center gap-2 hover:bg-[#515151]'>
+          <span className='h-7 w-7 flex justify-center text-xl font-bold bg-gray-400 rounded-full'>
+            P
+          </span>
+          <Link href='allProduct'>Products</Link>
+        </li>
+        <li className=' p-1 rounded-sm flex place-items-center gap-2 hover:bg-[#515151]'>
+          <span className='h-7 w-7 flex justify-center text-xl font-bold bg-gray-400 rounded-full'>
+            P
+          </span>
+          <Link href='allProduct'>Products</Link>
+        </li>
+        <li className=' p-1 rounded-sm flex place-items-center gap-2 hover:bg-[#515151]'>
+          <span className='h-7 w-7 flex justify-center text-xl font-bold bg-gray-400 rounded-full'>
+            P
+          </span>
+          <Link href='allProduct'>Products</Link>
+        </li>
+        <li className=' p-1 rounded-sm flex place-items-center gap-2 hover:bg-[#515151]'>
+          <span className='h-7 w-7 flex justify-center text-xl font-bold bg-gray-400 rounded-full'>
+            P
+          </span>
+          <Link href='allProduct'>Products</Link>
+        </li>
         <li className=' p-1 rounded-sm flex place-items-center gap-2 hover:bg-[#515151]'>
           <span className='h-7 w-7 flex justify-center text-xl font-bold bg-gray-400 rounded-full'>
             P
