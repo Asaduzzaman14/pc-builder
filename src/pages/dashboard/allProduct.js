@@ -1,12 +1,37 @@
 import DashboardLayout from "@/components/Layoutes/DashboardLayout";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 
-const allProduct = ({ products }) => {
-  const updateParts = () => {
+const AllProduct = ({ products }) => {
+  const updateParts = async (data) => {
+    data.Price = 6666;
+    console.log(data);
     console.log("update data");
-  };
+    try {
+      const response = await fetch(
+        `https://pc-builder-gules-psi.vercel.app/api/v1/pc-parts/${data._id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json", // Specify the content type
+            Accept: "application/json", // Specify the expected response type
+          },
+          body: JSON.stringify({
+            data,
+          }),
+        }
+      );
+      console.log(response);
 
+      if (!response.ok) {
+        console.log("ok");
+        console.error(`Error: ${response.status} - ${response.statusText}`);
+      }
+    } catch (error) {
+      console.error("Error:", error.message);
+      console.log("err");
+    }
+  };
   return (
     <div>
       <h2>Products {products?.data?.length}</h2>
@@ -28,10 +53,11 @@ const allProduct = ({ products }) => {
                   <h3>{product?.Category}</h3>
                   <p>{product?.Model}</p>
                   <p> {product?.Brand}</p>
+                  <p> {product?.Price}</p>
                 </div>
                 <div>
                   <button
-                    onClick={updateParts}
+                    onClick={() => updateParts(product)}
                     className='border bg-green-600 py-1 px-4 rounded-sm'
                   >
                     Update
@@ -46,9 +72,9 @@ const allProduct = ({ products }) => {
   );
 };
 
-export default allProduct;
+export default AllProduct;
 
-allProduct.getLayout = function getLayout(page) {
+AllProduct.getLayout = function getLayout(page) {
   return <DashboardLayout>{page}</DashboardLayout>;
 };
 

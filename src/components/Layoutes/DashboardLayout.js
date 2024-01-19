@@ -25,13 +25,9 @@ const DashboardLayout = ({ children }) => {
         />
       </div>
 
-      <div className='flex flex-row justify-between'>
+      <div className='flex flex-row scroll-m-0 justify-between'>
         <div className={`${show ? " hidden lg:block mr-40" : "block mr-40"}`}>
           <div className=' fixed  top-10 left-0  drawer-side h-[80%]'>
-            <label
-              htmlFor='dashboard-sidebar'
-              className='drawer-overlay'
-            ></label>
             <ul className='overflow-y-scroll bg-primary/95 text-white font-semibold menu  w-40 h-screen'>
               <Sidebar />
             </ul>

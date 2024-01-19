@@ -22,44 +22,28 @@ const Products = () => {
   }, []);
 
   return (
-    <div className='bg-white text-black'>
-      <h2 className=''>Products {items?.length}</h2>
-      <div>
-        <div class=' px-1'>
-          <h2 class=' font-bold mb-4'>Example Datatable</h2>
-          <table class='border-2 max-w-[300px] w-[200px] overflow-y-scroll overflow-x-scroll'>
-            <thead>
-              <tr className='text-sky-500'>
-                <th class='px-4 py-2'>Name</th>
-                <th class='px-4 py-2'>Position</th>
-                <th class='px-4 py-2'>Office</th>
-                <th class='px-4 py-2'>Age</th>
-                <th class='px-4 py-2'>Start date</th>
-                <th class='px-4 py-2'>Salary</th>
-              </tr>
-            </thead>
-            <tbody className='max-w-[300px] w-[200px]'>
-              <tr>
-                <td class='border px-4 py-2'>Airi Satou</td>
-                <td class='border px-4 py-2'>Accountant</td>
-                <td class='border px-4 py-2'>Tokyo</td>
-                <td class='border px-4 py-2'>33</td>
-                <td class='border px-4 py-2'>2008/11/28</td>
-                <td class='border px-4 py-2'>$162,700</td>
-              </tr>
-              <tr>
-                <td class='border px-4 py-2'>Brielle Williamson</td>
-                <td class='border px-4 py-2'>Integration Specialist</td>
-                <td class='border px-4 py-2'>New York</td>
-                <td class='border px-4 py-2'>61</td>
-                <td class='border px-4 py-2'>2012/12/02</td>
-                <td class='border px-4 py-2'>$372,000</td>
-              </tr>
-            </tbody>
-          </table>
+    <>
+      <div className='bg-white text-black'>
+        <h2 className=''>Products {items?.length}</h2>
+        <div>
+          <div class=' px-1'>
+            <h2 class=' font-bold mb-4'>Example Datatable</h2>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. At dolor
+            facilis harum quam sed laborum magnam odit nulla libero reiciendis
+            nobis ea, ut assumenda debitis laudantium alias. Ullam deserunt
+            iusto beatae numquam debitis repudiandae, pariatur perspiciatis quos
+            blanditiis culpa consequuntur aliquam eum animi, dolore obcaecati
+            sit porro sed et cupiditate. Accusamus debitis enim, distinctio nisi
+            blanditiis dolorem magnam dolorum ut. Neque esse, voluptates
+            deserunt impedit quas repudiandae facere voluptatibus ab tenetur
+            natus cupiditate nemo saepe. Vero veritatis eaque amet laboriosam
+            eligendi voluptates vitae, rem quibusdam fuga atque obcaecati illum
+            quas nisi cumque! Laboriosam sequi fuga et alias? Repellendus, a
+            necessitatibus.
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
